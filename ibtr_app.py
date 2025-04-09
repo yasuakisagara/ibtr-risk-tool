@@ -6,19 +6,22 @@ import numpy as np
 data = [
     # 変数名, 表示名, log(HR), SE
     ("agecategory_40未満", "40歳未満", 0.925107, 0.447266),
-    ("agecategory_40代", "40代", 0.0, 0.0),  # 基準
+    ("agecategory_40代", "40代（参照）", 0.0, 0.0),
     ("agecategory_50代", "50代", -0.260198, 0.132907),
-    ("agecategory_60以上", "60歳以上", -0.537844, 0.169046),
+    ("agecategory_60代", "60代", -0.537844, 0.169046),
+    ("agecategory_70歳以上", "70歳以上", -0.642398, 0.188960),
 
-    ("finalmargin_positive", "陽性断端", 1.481605, 0.416883),
-    ("finalmargin_negative", "陰性断端", 0.0, 0.0),  # 基準
+    ("finalmargin_陰性", "陰性断端（参照）", 0.0, 0.0),
+    ("finalmargin_近接", "近接断端", 1.112084, 0.523271),
+    ("finalmargin_陽性", "陽性断端", 1.481605, 0.416883),
 
-    ("pT_2以上", "pT2以上", 1.123930, 0.284657),
-    ("pT_1", "pT1", 0.0, 0.0),  # 基準
+    ("pT_1", "pT1（参照）", 0.0, 0.0),
+    ("pT_2", "pT2", 1.123930, 0.284657),
+    ("pT_3", "pT3", 1.789473, 0.350000),
 
+    ("grade_1", "Grade 1（参照）", 0.0, 0.0),
     ("grade_2", "Grade 2", 0.625418, 0.274052),
     ("grade_3", "Grade 3", 1.213716, 0.273415),
-    ("grade_1", "Grade 1", 0.0, 0.0),  # 基準
 
     ("lvi", "LVIあり", 0.774492, 0.311122),
     ("hormone_receptor", "ホルモン受容体陽性", -0.756010, 0.377652),
@@ -33,11 +36,11 @@ baseline_survival = {"5y": 0.94, "10y": 0.86}
 
 st.title("乳房内再発（IBTR）予測ツール")
 
-# 排他的選択
-age = st.radio("年齢カテゴリ", ["40歳未満", "40代", "50代", "60歳以上"])
-margin = st.radio("最終切除断端", ["陰性断端", "陽性断端"])
-t_stage = st.radio("病理T分類", ["pT1", "pT2以上"])
-grade = st.radio("グレード", ["Grade 1", "Grade 2", "Grade 3"])
+# ラジオボタン選択肢
+age = st.radio("年齢カテゴリ", ["40歳未満", "40代（参照）", "50代", "60代", "70歳以上"])
+margin = st.radio("最終切除断端", ["陰性断端（参照）", "近接断端", "陽性断端"])
+t_stage = st.radio("病理T分類", ["pT1（参照）", "pT2", "pT3"])
+grade = st.radio("グレード", ["Grade 1（参照）", "Grade 2", "Grade 3"])
 
 # チェックボックス
 lvi = st.checkbox("LVIあり")
@@ -56,10 +59,10 @@ input_dict = {}
 for var, label, loghr, se in data:
     input_dict[var] = 0
 
-input_dict[f"agecategory_{age}"] = 1
-input_dict[f"finalmargin_{'positive' if margin == '陽性断端' else 'negative'}"] = 1
-input_dict[f"pT_{'2以上' if t_stage == 'pT2以上' else '1'}"] = 1
-input_dict[f"grade_{grade[-1]}"] = 1
+input_dict[f"agecategory_{age.replace('（参照）', '')}"] = 1
+input_dict[f"finalmargin_{margin.replace('断端（参照）', '').replace('断端', '')}"] = 1
+input_dict[f"pT_{t_stage.replace('（参照）', '').replace('pT', '')}"] = 1
+input_dict[f"grade_{grade[-2]}"] = 1
 input_dict["lvi"] = int(lvi)
 input_dict["hormone_receptor"] = int(hormone_receptor)
 input_dict["her2"] = int(her2)
