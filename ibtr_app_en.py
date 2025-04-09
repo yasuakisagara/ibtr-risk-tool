@@ -90,3 +90,21 @@ if st.button("Calculate IBTR Risk"):
     for year, (r, lower, upper) in results.items():
         st.subheader(f"Estimated IBTR risk at {year}: {r*100:.1f}%")
         st.write(f"95% Confidence Interval: {lower*100:.1f}% - {upper*100:.1f}%")
+
+    # Explanation and references
+    st.markdown("""
+---
+### About this tool
+This multi-center retrospective cohort study included women who underwent partial mastectomy for invasive breast cancer between 2008 and 2017. Cases involving conversion to mastectomy, receipt of neoadjuvant chemotherapy, bilateral or multifocal cancers, or missing key data were excluded.
+Prediction models were developed using Cox proportional hazards regression and validated through bootstrap resampling. Model performance was evaluated using Harrell’s C-index, Brier scores, calibration plots, and goodness-of-fit tests. The baseline cumulative incidence of ipsilateral breast tumor recurrence (IBTR) was estimated using the Fine and Gray model, accounting for death as a competing risk.
+Hazard ratios (HRs) were derived from a multi-institutional cohort of 9,232 patients. Validation included assessment of discrimination and calibration of the Cox models:
+• Bootstrap validation (500 iterations)
+• Discrimination assessed via Harrell’s C-index and Brier score
+• Calibration evaluated through calibration plots comparing predicted and observed risks
+Hazard ratios for chemotherapy, endocrine therapy, and radiotherapy were obtained from meta-analyses conducted by the Early Breast Cancer Trialists’ Collaborative Group (EBCTCG; Lancet 2005, 2011).
+This model was developed by Sagara et al. and presented at ASCO 2025 in Chicago.
+
+### Disclaimer
+This tool is intended for academic and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Please consult a qualified healthcare provider for medical guidance.
+    """)
+
