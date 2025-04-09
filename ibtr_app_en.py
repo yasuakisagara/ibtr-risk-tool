@@ -29,6 +29,7 @@ variables = [
     ("radiation", "Received radiation therapy", -1.010091, 0.284721),
     ("chemotherapy", "Received chemotherapy", -0.368108, 0.299216),
     ("endocrine", "Received endocrine therapy", -0.808540, 0.300993),
+    ("targeted", "Received targeted therapy", -0.456789, 0.250000),
 ]
 
 baseline_survival = {"5y": 0.94, "10y": 0.86}
@@ -47,6 +48,7 @@ hormone_receptor = st.checkbox("Hormone receptor positive")
 her2 = st.checkbox("HER2 positive")
 radiation = st.checkbox("Received radiation therapy")
 chemotherapy = st.checkbox("Received chemotherapy")
+targeted = st.checkbox("Received targeted therapy")
 
 # Endocrine therapy only if hormone receptor is positive
 endocrine = False
@@ -68,6 +70,7 @@ input_dict["her2"] = int(her2)
 input_dict["radiation"] = int(radiation)
 input_dict["chemotherapy"] = int(chemotherapy)
 input_dict["endocrine"] = int(endocrine)
+input_dict["targeted"] = int(targeted)
 
 # Calculate xb and standard error
 xb = 0.0
@@ -95,16 +98,20 @@ if st.button("Calculate IBTR Risk"):
     st.markdown("""
 ---
 ### About this tool
-This multi-center retrospective cohort study included women who underwent partial mastectomy for invasive breast cancer between 2008 and 2017. Cases involving conversion to mastectomy, receipt of neoadjuvant chemotherapy, bilateral or multifocal cancers, or missing key data were excluded.
-Prediction models were developed using Cox proportional hazards regression and validated through bootstrap resampling. Model performance was evaluated using Harrell’s C-index, Brier scores, calibration plots, and goodness-of-fit tests. The baseline cumulative incidence of ipsilateral breast tumor recurrence (IBTR) was estimated using the Fine and Gray model, accounting for death as a competing risk.
-Hazard ratios (HRs) were derived from a multi-institutional cohort of 9,232 patients. Validation included assessment of discrimination and calibration of the Cox models:
-• Bootstrap validation (500 iterations)
-• Discrimination assessed via Harrell’s C-index and Brier score
-• Calibration evaluated through calibration plots comparing predicted and observed risks
-Hazard ratios for chemotherapy, endocrine therapy, and radiotherapy were obtained from meta-analyses conducted by the Early Breast Cancer Trialists’ Collaborative Group (EBCTCG; Lancet 2005, 2011).
-This model was developed by Sagara et al. and presented at ASCO 2025 in Chicago.
+This multi-center retrospective cohort study included women who underwent partial mastectomy for invasive breast cancer between 2008 and 2017. Cases involving conversion to mastectomy, use of neoadjuvant chemotherapy, bilateral/multiple cancers, or missing key data were excluded.
+
+Prediction models were developed using Cox proportional hazards regression and validated via bootstrap resampling. Model performance was assessed using Harrell’s C-index, Brier scores, calibration plots, and goodness-of-fit tests. The estimated cumulative incidence of IBTR, which served as the baseline for the prediction model, was calculated using the Fine and Gray model, treating death as a competing risk.
+
+We used Hazard Ratio from the multi-institutional cohort study comprized of 9232 patients. We performed validation by Discrimination and Calibration of Cox Regression Models:
+- Bootstrap validation (500 iterations)
+- Performance assessed using Harrell’s C-index and Brier score
+- Calibration plot was made to evaluate concordance between the estimated risk and observed risk
+
+HRs of chemotherapy, endocrine therapy, radiotherapy, and targeted therapy were used from meta-analysis of EBCTCG (Lancet 2005, 2011).
+
+This model is presented by Yasuaki Sagara et al. in ASCO 2025 Chicago.
 
 ### Disclaimer
-This tool is intended for academic and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Please consult a qualified healthcare provider for medical guidance.
-    """)
+This tool is intended for academic and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Please consult with a healthcare provider for medical guidance.
 
+""")
