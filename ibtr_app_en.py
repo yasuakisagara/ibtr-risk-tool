@@ -48,7 +48,11 @@ hormone_receptor = st.checkbox("Hormone receptor positive")
 her2 = st.checkbox("HER2 positive")
 radiation = st.checkbox("Received radiation therapy")
 chemotherapy = st.checkbox("Received chemotherapy")
-targeted = st.checkbox("Received targeted therapy")
+
+# Target therapy only if HER2 receptor is positive
+targeted = False
+if her2:
+    targeted = st.checkbox("Received targeted therapy")
 
 # Endocrine therapy only if hormone receptor is positive
 endocrine = False
