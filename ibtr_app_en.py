@@ -35,13 +35,15 @@ variables = [
 baseline_survival = {"5y": 0.94, "10y": 0.86}
 
 st.image("logo.png", width=180)
+
 st.markdown("## IBTR Risk Prediction Tool Integrating Real-World Data and Evidence from Meta-Analyses")
 st.markdown("### Version 1.0")
-st.markdown(\"\"\"
+
+st.markdown("""
 Please enter the patient's clinical and pathological information below.  
 The tool will estimate the 5-year and 10-year risk of ipsilateral breast tumor recurrence (IBTR)  
 based on a validated prediction model.
-\"\"\")
+""")
 
 # Radio button selections
 age = st.radio("Age category", ["Under 40", "40s", "50s", "60s", "70 or older"])
