@@ -102,18 +102,15 @@ if st.button("Calculate IBTR Risk"):
     st.markdown("""
 ---
 ### About this tool
-This prediction models is developped and validated by a multi-center retrospective cohort study included women who underwent partial mastectomy for invasive breast cancer between 2008 and 2017. Cases involving conversion to mastectomy, use of neoadjuvant chemotherapy, bilateral/multiple cancers, or missing key data were excluded.
-
-The candidated models were developed using Cox proportional hazards regression and validated via bootstrap resampling. Model performance was assessed using Harrell’s C-index, Brier scores, calibration plots, and goodness-of-fit tests. The estimated cumulative incidence of IBTR, which served as the baseline for the prediction model, was calculated using the Fine and Gray model, treating death as a competing risk.
-
-We used Hazard Ratio from the multi-institutional cohort study comprized of 9232 patients. We performed validation by Discrimination and Calibration of Cox Regression Models:
-- Bootstrap validation (500 iterations)
-- Performance assessed using Harrell’s C-index and Brier score
-- Calibration plot was made to evaluate concordance between the estimated risk and observed risk
-
-HRs of chemotherapy, endocrine therapy, radiotherapy, and targeted therapy were used from meta-analysis of EBCTCG (Lancet 2005, 2011).
-
-This is presented at Annual meeting of American Society of Clinical Oncology 2025 in Chicago (Abstract number: 575).
+This prediction model was developed and validated through a multi-center retrospective cohort study including women who underwent partial mastectomy for invasive breast cancer between 2008 and 2017. Cases involving conversion to mastectomy, use of neoadjuvant chemotherapy, bilateral/multiple cancers, or missing key data were excluded.
+The study was conducted as a collaborative project of the Japanese Breast Cancer Society Collaborative Research Group and involved seven institutions in Japan: Cancer Institute Hospital of JFCR, St. Luke's International Hospital, Kyoto University Hospital, Osaka Metropolitan University Hospital, Mie University Hospital, Okayama University Hospital, and Hakuaikai Sagara Hospital.
+Candidate models were developed using Cox proportional hazards regression and validated via bootstrap resampling. Model performance was assessed using Harrell’s C-index, Brier scores, calibration plots, and goodness-of-fit tests. The estimated cumulative incidence of ipsilateral breast tumor recurrence (IBTR), which served as the baseline for the prediction model, was calculated using the Fine and Gray model, treating death as a competing risk.
+We used hazard ratios from the multi-institutional cohort study comprising 9,232 patients. Validation was performed by assessing discrimination and calibration of Cox regression models:
+Bootstrap validation (500 iterations)
+Performance assessed using Harrell’s C-index and Brier score
+Calibration plot was made to evaluate concordance between the estimated risk and observed risk
+In addition, we incorporated hazard ratios from the EBCTCG meta-analyses (Lancet 2005, 2011) to account for the effects of adjuvant therapies on reducing the risk of isolated local recurrence: chemotherapy (HR 0.63, SE 0.08), endocrine therapy (HR 0.54, SE 0.07), and radiotherapy (HR 0.31, SE 0.04).
+This work was presented at the Annual Meeting of the American Society of Clinical Oncology 2025 in Chicago (Abstract number: 575).
 
 ### Disclaimer
 This tool is intended for academic and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Please consult with a healthcare provider for medical guidance.
