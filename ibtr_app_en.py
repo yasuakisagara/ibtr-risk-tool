@@ -90,11 +90,50 @@ variables = [
 baseline_survival = {"5y": 0.94, "10y": 0.86}
 
 # --- Input dictionary ---
+
+# マッピング用辞書を定義
+age_mapping = {
+    "Under 40": "agecategory_<40",
+    "40s": "agecategory_40s",
+    "50s": "agecategory_50s",
+    "60s": "agecategory_60s",
+    "70 or older": "agecategory_70+",
+    "40歳未満": "agecategory_<40",
+    "40代": "agecategory_40s",
+    "50代": "agecategory_50s",
+    "60代": "agecategory_60s",
+    "70歳以上": "agecategory_70+"
+}
+
+margin_mapping = {
+    "Negative margin": "finalmargin_negative",
+    "Close margin": "finalmargin_close",
+    "Positive margin": "finalmargin_positive",
+    "陰性断端": "finalmargin_negative",
+    "近接断端": "finalmargin_close",
+    "陽性断端": "finalmargin_positive"
+}
+
+t_stage_mapping = {
+    "pT1": "pT_1",
+    "pT2": "pT_2",
+    "pT3": "pT_3"
+}
+
+grade_mapping = {
+    "Grade 1": "grade_1",
+    "Grade 2": "grade_2",
+    "Grade 3": "grade_3"
+}
+
+# input_dictの設定
 input_dict = {var: 0 for var, _, _, _ in variables}
-input_dict[f"agecategory_{age.split()[0].replace('<','<').replace('70','70+')}"] = 1
-input_dict[f"finalmargin_{'negative' if 'Negative' in margin else 'close' if 'Close' in margin else 'positive'}"] = 1
-input_dict[f"pT_{t_stage[2]}"] = 1
-input_dict[f"grade_{grade[-1]}"] = 1
+input_dict[age_mapping[age]] = 1
+input_dict[margin_mapping[margin]] = 1
+input_dict[t_stage_mapping[t_stage]] = 1
+input_dict[grade_mapping[grade]] = 1
+
+# 残りのチェックボックス項目
 input_dict.update({
     "lvi": int(lvi),
     "hormone_receptor": int(hormone_receptor),
