@@ -70,7 +70,7 @@ variables = [
     ("agecategory_60s", "60s", -0.453197487, 0.1193687),
     ("agecategory_70+", "70 or older", -0.594712977, 0.1222106),
     ("finalmargin_negative", "Negative margin", 0.0, 0.0),
-    ("finalmargin_close", "Close margin", 0.533038286, 0.2443688),
+    ("finalmargin_close(<5mm)", "Close margin(<5mm)", 0.533038286, 0.2443688),
     ("finalmargin_positive", "Positive margin", 0.817501467, 0.4696936),
     ("pT_1", "pT1", 0.0, 0.0),
     ("pT_2", "pT2", 0.215485503, 0.195763),
