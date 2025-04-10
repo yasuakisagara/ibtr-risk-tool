@@ -1,4 +1,4 @@
-# ibtr_app.py - Full Model with HR-based Calculation, Language Toggle, UI & Label Multilingual
+# ibtr_app.py - Full Model with Corrected Display Order
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -30,9 +30,15 @@ T = {
     "chemo_label": {"English": "Received chemotherapy", "日本語": "化学療法あり"},
     "endocrine_label": {"English": "Received endocrine therapy", "日本語": "内分泌療法あり"},
     "targeted_label": {"English": "Received targeted therapy", "日本語": "分子標的治療あり"},
-    "section_background": {"English": "Patient Characteristics", "日本語": "患者背景"},
-    "section_treatment": {"English": "Treatment Information", "日本語": "治療内容"}
+    "section_background": {"English": "🧑‍⚕️ Patient Characteristics", "日本語": "🧑‍⚕️ 患者背景"},
+    "section_treatment": {"English": "💊 Treatment Information", "日本語": "💊 治療内容"}
 }
+
+# --- タイトル表示を最上部に配置 ---
+st.image("logo.png", width=180)
+st.markdown(f"## {T['title'][lang]}")
+st.markdown(f"### {T['version'][lang]}")
+st.markdown(T['description'][lang])
 
 # --- セクション：患者背景 ---
 st.markdown(f"### {T['section_background'][lang]}")
@@ -40,12 +46,12 @@ age = st.radio(T['age_label'][lang], ["Under 40", "40s", "50s", "60s", "70 or ol
 margin = st.radio(T['margin_label'][lang], ["Negative margin", "Close margin", "Positive margin"], key="margin_radio")
 t_stage = st.radio(T['tumor_label'][lang], ["pT1", "pT2", "pT3"], key="tumor_radio")
 grade = st.radio(T['grade_label'][lang], ["Grade 1", "Grade 2", "Grade 3"], key="grade_radio")
-lvi = st.checkbox(T['lvi_label'][lang], key="lvi_check")
-hormone_receptor = st.checkbox(T['hr_label'][lang], key="hr_check")
-her2 = st.checkbox(T['her2_label'][lang], key="her2_check")
 
 # --- セクション：治療内容 ---
 st.markdown(f"### {T['section_treatment'][lang]}")
+lvi = st.checkbox(T['lvi_label'][lang], key="lvi_check")
+hormone_receptor = st.checkbox(T['hr_label'][lang], key="hr_check")
+her2 = st.checkbox(T['her2_label'][lang], key="her2_check")
 radiation = st.checkbox(T['radiation_label'][lang], key="radiation_check")
 chemotherapy = st.checkbox(T['chemo_label'][lang], key="chemo_check")
 targeted = st.checkbox(T['targeted_label'][lang], key="targeted_check") if her2 else False
