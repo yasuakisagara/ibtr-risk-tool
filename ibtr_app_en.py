@@ -40,12 +40,12 @@ age = st.radio(T['age_label'][lang], ["Under 40", "40s", "50s", "60s", "70 or ol
 margin = st.radio(T['margin_label'][lang], ["Negative margin", "Close margin", "Positive margin"], key="margin_radio")
 t_stage = st.radio(T['tumor_label'][lang], ["pT1", "pT2", "pT3"], key="tumor_radio")
 grade = st.radio(T['grade_label'][lang], ["Grade 1", "Grade 2", "Grade 3"], key="grade_radio")
-
-# --- セクション：治療内容 ---
-st.markdown(f"### {T['section_treatment'][lang]}")
 lvi = st.checkbox(T['lvi_label'][lang], key="lvi_check")
 hormone_receptor = st.checkbox(T['hr_label'][lang], key="hr_check")
 her2 = st.checkbox(T['her2_label'][lang], key="her2_check")
+
+# --- セクション：治療内容 ---
+st.markdown(f"### {T['section_treatment'][lang]}")
 radiation = st.checkbox(T['radiation_label'][lang], key="radiation_check")
 chemotherapy = st.checkbox(T['chemo_label'][lang], key="chemo_check")
 targeted = st.checkbox(T['targeted_label'][lang], key="targeted_check") if her2 else False
