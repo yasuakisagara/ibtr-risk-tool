@@ -1,17 +1,12 @@
-# ibtr_app.py - Full Model with Corrected Display Order
+# ibtr_app.py - Full Model with HR-based Calculation, Organized by Section (Corrected lang position)
 import streamlit as st
 import pandas as pd
 import numpy as np
 
-# Title block at top
-st.image("logo.png", width=180)
-st.markdown(f"## {{T['title'][lang]}}")
-st.markdown(f"### {{T['version'][lang]}}")
-st.markdown(T['description'][lang])
+# Language selector must come first
+lang = st.selectbox("Language / 言語", ["English", "日本語"])
 
-# Language selector placed directly after title
-lang = st.selectbox("Language / 言語", ["English", "日本語"], key="lang_select")
-
+# Translation dictionary (T) must come after lang is defined
 T = {
     "title": {
         "English": "IBTR Risk Prediction Tool Integrating Real-World Data and Evidence from Meta-Analyses",
@@ -23,47 +18,36 @@ T = {
         "日本語": "以下に患者の臨床および病理情報を入力してください。"
     },
     "calculate": {"English": "Calculate IBTR Risk", "日本語": "乳房内再発リスクを計算"},
-    "estimated_risk": {"English": "Estimated {year} IBTR Risk", "日本語": "推定された乳房内{year}年再発リスク"},
-    "ci": {"English": "(95% Confidence Interval: {lower:.1f}% - {upper:.1f}%)", "日本語": "(95%信頼区間: {lower:.1f}% - {upper:.1f}%)"},
-    "age_label": {"English": "Age category", "日本語": "年齢カテゴリ"},
-    "margin_label": {"English": "Final surgical margin", "日本語": "最終断端状況"},
-    "tumor_label": {"English": "Pathological T stage", "日本語": "病理T分類"},
-    "grade_label": {"English": "Histologic grade", "日本語": "組織学的グレード"},
-    "lvi_label": {"English": "Lymphovascular invasion present", "日本語": "脈管侵襲あり"},
-    "hr_label": {"English": "Hormone receptor positive", "日本語": "ホルモン受容体陽性"},
-    "her2_label": {"English": "HER2 positive", "日本語": "HER2陽性"},
-    "radiation_label": {"English": "Received radiation therapy", "日本語": "放射線治療あり"},
-    "chemo_label": {"English": "Received chemotherapy", "日本語": "化学療法あり"},
-    "endocrine_label": {"English": "Received endocrine therapy", "日本語": "内分泌療法あり"},
-    "targeted_label": {"English": "Received targeted therapy", "日本語": "分子標的治療あり"},
-    "section_background": {"English": "Patient Characteristics", "日本語": "患者背景"},
-    "section_treatment": {"English": "Treatment Information", "日本語": "治療内容"}
+    "estimated_risk": {"English": "Estimated IBTR risk at", "日本語": "推定された乳房内再発リスク（"},
+    "ci": {"English": "95% Confidence Interval", "日本語": "95%信頼区間"}
 }
 
-# --- タイトル表示を最上部に配置 ---
+# --- Display title and description ---
 st.image("logo.png", width=180)
 st.markdown(f"## {T['title'][lang]}")
 st.markdown(f"### {T['version'][lang]}")
 st.markdown(T['description'][lang])
 
-# --- セクション：患者背景 ---
-st.markdown(f"### {T['section_background'][lang]}")
-age = st.radio(T['age_label'][lang], ["Under 40", "40s", "50s", "60s", "70 or older"], key="age_radio")
-margin = st.radio(T['margin_label'][lang], ["Negative margin", "Close margin", "Positive margin"], key="margin_radio")
-t_stage = st.radio(T['tumor_label'][lang], ["pT1", "pT2", "pT3"], key="tumor_radio")
-grade = st.radio(T['grade_label'][lang], ["Grade 1", "Grade 2", "Grade 3"], key="grade_radio")
+# --- Section: Patient Characteristics ---
+st.markdown("### Patient Characteristics")
 
-# --- セクション：治療内容 ---
-st.markdown(f"### {T['section_treatment'][lang]}")
-lvi = st.checkbox(T['lvi_label'][lang], key="lvi_check")
-hormone_receptor = st.checkbox(T['hr_label'][lang], key="hr_check")
-her2 = st.checkbox(T['her2_label'][lang], key="her2_check")
-radiation = st.checkbox(T['radiation_label'][lang], key="radiation_check")
-chemotherapy = st.checkbox(T['chemo_label'][lang], key="chemo_check")
-targeted = st.checkbox(T['targeted_label'][lang], key="targeted_check") if her2 else False
-endocrine = st.checkbox(T['endocrine_label'][lang], key="endocrine_check") if hormone_receptor else False
+age = st.radio("Age category", ["Under 40", "40s", "50s", "60s", "70 or older"])
+margin = st.radio("Final surgical margin", ["Negative margin", "Close margin", "Positive margin"])
+t_stage = st.radio("Pathological T stage", ["pT1", "pT2", "pT3"])
+grade = st.radio("Histologic grade", ["Grade 1", "Grade 2", "Grade 3"])
+lvi = st.checkbox("Lymphovascular invasion present")
+hormone_receptor = st.checkbox("Hormone receptor positive")
+her2 = st.checkbox("HER2 positive")
 
-# Cox model coefficients
+# --- Section: Treatment Information ---
+st.markdown("### Treatment")
+
+radiation = st.checkbox("Received radiation therapy")
+chemotherapy = st.checkbox("Received chemotherapy")
+targeted = st.checkbox("Received targeted therapy") if her2 else False
+endocrine = st.checkbox("Received endocrine therapy") if hormone_receptor else False
+
+# --- HR Model Coefficients ---
 variables = [
     ("agecategory_<40", "Under 40", 0.925107351, 0.4472657),
     ("agecategory_40s", "40s", 0.0, 0.0),
@@ -90,26 +74,7 @@ variables = [
 
 baseline_survival = {"5y": 0.94, "10y": 0.86}
 
-st.image("logo.png", width=180)
-st.markdown(f"## {T['title'][lang]}")
-st.markdown(f"### {T['version'][lang]}")
-st.markdown(T['description'][lang])
-
-# Variable selections
-age = st.radio("Age category", ["Under 40", "40s", "50s", "60s", "70 or older"])
-margin = st.radio("Final surgical margin", ["Negative margin", "Close margin", "Positive margin"])
-t_stage = st.radio("Pathological T stage", ["pT1", "pT2", "pT3"])
-grade = st.radio("Histologic grade", ["Grade 1", "Grade 2", "Grade 3"])
-
-lvi = st.checkbox("Lymphovascular invasion present")
-hormone_receptor = st.checkbox("Hormone receptor positive")
-her2 = st.checkbox("HER2 positive")
-radiation = st.checkbox("Received radiation therapy")
-chemotherapy = st.checkbox("Received chemotherapy")
-targeted = st.checkbox("Received targeted therapy") if her2 else False
-endocrine = st.checkbox("Received endocrine therapy") if hormone_receptor else False
-
-# Input dictionary
+# --- Input dictionary ---
 input_dict = {var: 0 for var, _, _, _ in variables}
 input_dict[f"agecategory_{age.split()[0].replace('<','<').replace('70','70+')}"] = 1
 input_dict[f"finalmargin_{'negative' if 'Negative' in margin else 'close' if 'Close' in margin else 'positive'}"] = 1
@@ -125,7 +90,7 @@ input_dict.update({
     "targeted": int(targeted)
 })
 
-# Risk calculation
+# --- Risk calculation ---
 xb = 0.0
 se_sum = 0.0
 for var, label, loghr, se in variables:
@@ -141,46 +106,14 @@ for year, S0 in baseline_survival.items():
     risk_upper = 1 - S0 ** np.exp(xb + 1.96 * se_total)
     results[year] = (risk, risk_lower, risk_upper)
 
+# --- Output ---
 if st.button(T['calculate'][lang]):
     for year, (r, lower, upper) in results.items():
-        if lang == "日本語":
-            year_label = year.replace("y", "年")
-            st.subheader(f"推定された乳房内{year_label}再発リスク : {r*100:.1f}%")
-            st.write(f"95%信頼区間: {lower*100:.1f}% - {upper*100:.1f}%")
-        else:
-            st.subheader(f"Estimated {year} IBTR Risk: {r*100:.1f}%")
-            st.write(f"95% Confidence Interval: {lower*100:.1f}% - {upper*100:.1f}%")
+        st.subheader(f"{T['estimated_risk'][lang]} {year}: {r*100:.1f}%")
+        st.write(f"{T['ci'][lang]}: {lower*100:.1f}% - {upper*100:.1f}%")
 
-
-
-# Footnote
-if lang == "日本語":
-    st.markdown("""
----
-### 本ツールについて
-本予測モデルは、2008年から2017年に部分切除術を受けた浸潤性乳がん女性を対象とした多施設後ろ向きコホート研究により開発・検証されました。全摘術への移行、術前化学療法の使用、両側・多発がん、主要データの欠落などの症例は除外されました。
-
-本研究は日本乳癌学会共同研究グループによる共同研究として実施され、以下の日本国内の7つの施設が参加しました：
-がん研究会有明病院、聖路加国際病院、京都大学医学部附属病院、大阪公立大学医学部附属病院、三重大学医学部附属病院、岡山大学病院、白壁会さがら病院。
-
-モデルは Cox 比例ハザード回帰を用いて構築され、ブートストラップ再サンプリングによって検証されました。モデル性能は Harrell のC-index、Brierスコア、キャリブレーションプロット、および適合度検定で評価されました。
-
-ベースラインとして使用した乳房内再発（IBTR）の累積発生率は、Fine and Gray モデルを用いて死亡を競合リスクとして推定しました。
-
-9,232人の患者からなる多施設共同研究に基づいたハザード比を用いて検証を行いました：
-- ブートストラップ検証（500回）
-- HarrellのC-indexとBrierスコアによる性能評価
-- 推定リスクと実測リスクの整合性を評価するキャリブレーションプロット
-
-さらに、孤立性局所再発のリスク低下効果を反映するため、EBCTCGメタアナリシス（Lancet 2005, 2011）に基づいた化学療法（HR 0.63, SE 0.08）、内分泌療法（HR 0.54, SE 0.07）、放射線治療（HR 0.31, SE 0.04）のハザード比を統合しました。
-
-本研究成果は、2025年の米国臨床腫瘍学会（ASCO）年次総会（演題番号: 575）にて発表されました。
-
-### 免責事項
-このツールは学術目的および教育目的のために提供されており、医学的助言、診断、治療の代替とはなりません。個別の診療判断については医療専門職にご相談ください。
-""")
-else:
-    st.markdown("""
+# --- Footnote ---
+st.markdown("""
 ---
 ### About this tool
 This prediction model was developed and validated through a multi-center retrospective cohort study including women who underwent partial mastectomy for invasive breast cancer between 2008 and 2017. Cases involving conversion to mastectomy, use of neoadjuvant chemotherapy, bilateral/multiple cancers, or missing key data were excluded.
@@ -190,6 +123,7 @@ The study was conducted as a collaborative project of the Japanese Breast Cancer
 Candidate models were developed using Cox proportional hazards regression and validated via bootstrap resampling. Model performance was assessed using Harrell’s C-index, Brier scores, calibration plots, and goodness-of-fit tests. The estimated cumulative incidence of ipsilateral breast tumor recurrence (IBTR), which served as the baseline for the prediction model, was calculated using the Fine and Gray model, treating death as a competing risk.
 
 We used hazard ratios from the multi-institutional cohort study comprising 9,232 patients. Validation was performed by assessing discrimination and calibration of Cox regression models:
+
 - Bootstrap validation (500 iterations)
 - Performance assessed using Harrell’s C-index and Brier score
 - Calibration plot was made to evaluate concordance between the estimated risk and observed risk
