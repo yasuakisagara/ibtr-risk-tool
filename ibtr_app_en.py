@@ -34,6 +34,7 @@ variables = [
 
 baseline_survival = {"5y": 0.94, "10y": 0.86}
 
+st.image("A_logo_design_for_an_IBTR_(Ipsilateral_Breast_Tumo.png", width=250)
 st.title("IBTR Risk Estimation ver1.0")
 
 # Radio button selections
