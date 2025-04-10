@@ -108,3 +108,25 @@ if st.button(T['calculate'][lang]):
         else:
             st.subheader(f"Estimated {year} IBTR Risk: {r*100:.1f}%")
             st.write(f"95% Confidence Interval: {lower*100:.1f}% - {upper*100:.1f}%")
+
+# Footnote
+st.markdown("""
+---
+### About this tool
+This prediction models is developped and validated by a multi-center retrospective cohort study included women who underwent partial mastectomy for invasive breast cancer between 2008 and 2017. Cases involving conversion to mastectomy, use of neoadjuvant chemotherapy, bilateral/multiple cancers, or missing key data were excluded.
+
+The candidated models were developed using Cox proportional hazards regression and validated via bootstrap resampling. Model performance was assessed using Harrell’s C-index, Brier scores, calibration plots, and goodness-of-fit tests. The estimated cumulative incidence of IBTR, which served as the baseline for the prediction model, was calculated using the Fine and Gray model, treating death as a competing risk.
+
+We used Hazard Ratio from the multi-institutional cohort study comprized of 9232 patients. We performed validation by Discrimination and Calibration of Cox Regression Models:
+- Bootstrap validation (500 iterations)
+- Performance assessed using Harrell’s C-index and Brier score
+- Calibration plot was made to evaluate concordance between the estimated risk and observed risk
+
+HRs of chemotherapy, endocrine therapy, radiotherapy, and targeted therapy were used from meta-analysis of EBCTCG (Lancet 2005, 2011).
+
+This is presented at Annual meeting of American Society of Clinical Oncology 2025 in Chicago (Abstract number: 575).
+
+### Disclaimer
+This tool is intended for academic and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Please consult with a healthcare provider for medical guidance.
+""")
+
