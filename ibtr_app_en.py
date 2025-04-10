@@ -3,8 +3,14 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-# Language selector
-lang = st.selectbox("Language / 言語", ["English", "日本語"])
+# Title block at top
+st.image("logo.png", width=180)
+st.markdown(f"## {{T['title'][lang]}}")
+st.markdown(f"### {{T['version'][lang]}}")
+st.markdown(T['description'][lang])
+
+# Language selector placed directly after title
+lang = st.selectbox("Language / 言語", ["English", "日本語"], key="lang_select")
 
 T = {
     "title": {
@@ -30,8 +36,8 @@ T = {
     "chemo_label": {"English": "Received chemotherapy", "日本語": "化学療法あり"},
     "endocrine_label": {"English": "Received endocrine therapy", "日本語": "内分泌療法あり"},
     "targeted_label": {"English": "Received targeted therapy", "日本語": "分子標的治療あり"},
-    "section_background": {"English": "🧑‍⚕️ Patient Characteristics", "日本語": "🧑‍⚕️ 患者背景"},
-    "section_treatment": {"English": "💊 Treatment Information", "日本語": "💊 治療内容"}
+    "section_background": {"English": "Patient Characteristics", "日本語": "患者背景"},
+    "section_treatment": {"English": "Treatment Information", "日本語": "治療内容"}
 }
 
 # --- タイトル表示を最上部に配置 ---
