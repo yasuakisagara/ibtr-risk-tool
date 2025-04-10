@@ -17,8 +17,8 @@ T = {
         "日本語": "以下に患者の臨床および病理情報を入力してください。"
     },
     "calculate": {"English": "Calculate IBTR Risk", "日本語": "乳房内再発リスクを計算"},
-    "estimated_risk": {"English": "Estimated IBTR risk at", "日本語": "推定された乳房内再発リスク（"},
-    "ci": {"English": "95% Confidence Interval", "日本語": "95%信頼区間"}
+    "estimated_risk": {"English": "Estimated {year} IBTR Risk", "日本語": "推定された乳房内{year}年再発リスク"},
+    "ci": {"English": "(95% Confidence Interval: {lower:.1f}% - {upper:.1f}%)", "日本語": "(95%信頼区間: {lower:.1f}% - {upper:.1f}%)"}
 }
 
 # Cox model coefficients
@@ -101,26 +101,10 @@ for year, S0 in baseline_survival.items():
 
 if st.button(T['calculate'][lang]):
     for year, (r, lower, upper) in results.items():
-        st.subheader(f"{T['estimated_risk'][lang]} {year}: {r*100:.1f}%")
-        st.write(f"{T['ci'][lang]}: {lower*100:.1f}% - {upper*100:.1f}%")
-
-# Footnote
-st.markdown("""
----
-### About this tool
-This prediction models is developped and validated by a multi-center retrospective cohort study included women who underwent partial mastectomy for invasive breast cancer between 2008 and 2017. Cases involving conversion to mastectomy, use of neoadjuvant chemotherapy, bilateral/multiple cancers, or missing key data were excluded.
-
-The candidated models were developed using Cox proportional hazards regression and validated via bootstrap resampling. Model performance was assessed using Harrell’s C-index, Brier scores, calibration plots, and goodness-of-fit tests. The estimated cumulative incidence of IBTR, which served as the baseline for the prediction model, was calculated using the Fine and Gray model, treating death as a competing risk.
-
-We used Hazard Ratio from the multi-institutional cohort study comprized of 9232 patients. We performed validation by Discrimination and Calibration of Cox Regression Models:
-- Bootstrap validation (500 iterations)
-- Performance assessed using Harrell’s C-index and Brier score
-- Calibration plot was made to evaluate concordance between the estimated risk and observed risk
-
-HRs of chemotherapy, endocrine therapy, radiotherapy, and targeted therapy were used from meta-analysis of EBCTCG (Lancet 2005, 2011).
-
-This is presented at Annual meeting of American Society of Clinical Oncology 2025 in Chicago (Abstract number: 575).
-
-### Disclaimer
-This tool is intended for academic and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Please consult with a healthcare provider for medical guidance.
-""")
+        if lang == "日本語":
+            year_label = year.replace("y", "年")
+            st.subheader(f"推定された乳房内{year_label}再発リスク : {r*100:.1f}%")
+            st.write(f"95%信頼区間: {lower*100:.1f}% - {upper*100:.1f}%")
+        else:
+            st.subheader(f"Estimated {year} IBTR Risk: {r*100:.1f}%")
+            st.write(f"95% Confidence Interval: {lower*100:.1f}% - {upper*100:.1f}%")
