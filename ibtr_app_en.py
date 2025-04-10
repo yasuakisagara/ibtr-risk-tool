@@ -106,14 +106,42 @@ for year, S0 in baseline_survival.items():
     risk_upper = 1 - S0 ** np.exp(xb + 1.96 * se_total)
     results[year] = (risk, risk_lower, risk_upper)
 
-# --- Output ---
+# Result output section
 if st.button(T['calculate'][lang]):
     for year, (r, lower, upper) in results.items():
-        st.subheader(f"{T['estimated_risk'][lang]} {year}: {r*100:.1f}%")
-        st.write(f"{T['ci'][lang]}: {lower*100:.1f}% - {upper*100:.1f}%")
+        if lang == "日本語":
+            year_jp = year.replace("y", "年")
+            st.subheader(f"推定された乳房内{year_jp}再発リスク : {r*100:.1f}%")
+            st.write(f"95%信頼区間: {lower*100:.1f}% - {upper*100:.1f}%")
+        else:
+            st.subheader(f"Estimated {year} IBTR Risk: {r*100:.1f}%")
+            st.write(f"95% Confidence Interval: {lower*100:.1f}% - {upper*100:.1f}%")
 
-# --- Footnote ---
-st.markdown("""
+# Footnote section (multilingual)
+if lang == "日本語":
+    st.markdown("""
+---
+### 本ツールについて
+本予測モデルは、2008年から2017年に部分切除術を受けた浸潤性乳がん女性を対象とした多施設後ろ向きコホート研究により開発・検証されました。全摘術への移行、術前化学療法の使用、両側・多発がん、主要データの欠落などの症例は除外されました。
+
+本研究は日本乳癌学会共同研究グループによる共同研究として実施され、以下の日本国内の7つの施設が参加しました：がん研究会有明病院、聖路加国際病院、京都大学医学部附属病院、大阪公立大学医学部附属病院、三重大学医学部附属病院、岡山大学病院、白壁会さがら病院。
+
+モデルは Cox 比例ハザード回帰を用いて構築され、ブートストラップ再サンプリングにより検証されました。モデル性能は Harrell のC-index、Brierスコア、キャリブレーションプロット、および適合度検定で評価されました。再発予測のベースラインとして、Fine and Gray モデルにより死亡を競合リスクとした IBTR の累積発生率を使用しました。
+
+9,232人の患者を対象とした多施設共同研究のハザード比を用いて検証され、以下を実施しました：
+- ブートストラップ検証（500回）
+- HarrellのC-indexとBrierスコアによる性能評価
+- 推定リスクと実測リスクの一致度を評価するキャリブレーションプロット
+
+さらに、局所再発リスク低減効果を考慮するため、EBCTCG メタアナリシス（Lancet 2005, 2011）から得られた以下の補助療法のHRを統合しました：化学療法（HR 0.63, SE 0.08）、内分泌療法（HR 0.54, SE 0.07）、放射線治療（HR 0.31, SE 0.04）。
+
+この研究成果は、2025年の米国臨床腫瘍学会（ASCO）年次総会（演題番号: 575）にて発表されました。
+
+### 免責事項
+このツールは学術目的および教育目的のために提供されており、医学的助言、診断、治療の代替とはなりません。医療上の判断は必ず医療従事者にご相談ください。
+""")
+else:
+    st.markdown("""
 ---
 ### About this tool
 This prediction model was developed and validated through a multi-center retrospective cohort study including women who underwent partial mastectomy for invasive breast cancer between 2008 and 2017. Cases involving conversion to mastectomy, use of neoadjuvant chemotherapy, bilateral/multiple cancers, or missing key data were excluded.
@@ -123,7 +151,6 @@ The study was conducted as a collaborative project of the Japanese Breast Cancer
 Candidate models were developed using Cox proportional hazards regression and validated via bootstrap resampling. Model performance was assessed using Harrell’s C-index, Brier scores, calibration plots, and goodness-of-fit tests. The estimated cumulative incidence of ipsilateral breast tumor recurrence (IBTR), which served as the baseline for the prediction model, was calculated using the Fine and Gray model, treating death as a competing risk.
 
 We used hazard ratios from the multi-institutional cohort study comprising 9,232 patients. Validation was performed by assessing discrimination and calibration of Cox regression models:
-
 - Bootstrap validation (500 iterations)
 - Performance assessed using Harrell’s C-index and Brier score
 - Calibration plot was made to evaluate concordance between the estimated risk and observed risk
