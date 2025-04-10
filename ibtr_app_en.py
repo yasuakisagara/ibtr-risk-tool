@@ -110,7 +110,30 @@ if st.button(T['calculate'][lang]):
             st.write(f"95% Confidence Interval: {lower*100:.1f}% - {upper*100:.1f}%")
 
 # Footnote
-st.markdown("""
+if lang == "日本語":
+    st.markdown("""
+---
+### 本ツールについて
+本予測モデルは、2008年から2017年に部分切除術を受けた浸潤性乳がん女性を対象とした多施設後ろ向きコホート研究により開発・検証されました。全摘術への移行、術前化学療法の使用、両側・多発がん、主要データの欠落などの症例は除外されました。
+
+モデルは Cox 比例ハザード回帰を用いて構築され、ブートストラップ再サンプリングによって検証されました。モデル性能は Harrell のC-index、Brierスコア、キャリブレーションプロット、および適合度検定で評価されました。
+
+ベースラインとして使用した乳房内再発の累積発生率は、Fine and Gray モデルにより死亡を競合リスクとして推定しました。
+
+HRは、9,232人の患者を対象とした多施設共同研究に基づいており、次の検証を行いました：
+- ブートストラップ検証（500回）
+- HarrellのC-indexとBrierスコアによる性能評価
+- 推定リスクと実測リスクの整合性を評価するキャリブレーションプロット
+
+化学療法、内分泌療法、放射線治療、分子標的治療のHRはEBCTCGメタアナリシス（Lancet 2005, 2011）に基づいています。
+
+この研究成果は、2025年の米国臨床腫瘍学会（ASCO）年次総会（演題番号: 575）にて発表されました。
+
+### 免責事項
+このツールは学術目的および教育目的のために提供されており、医学的助言、診断、治療の代替とはなりません。個別の診療判断については医療専門職にご相談ください。
+""")
+else:
+    st.markdown("""
 ---
 ### About this tool
 This prediction models is developped and validated by a multi-center retrospective cohort study included women who underwent partial mastectomy for invasive breast cancer between 2008 and 2017. Cases involving conversion to mastectomy, use of neoadjuvant chemotherapy, bilateral/multiple cancers, or missing key data were excluded.
@@ -129,4 +152,3 @@ This is presented at Annual meeting of American Society of Clinical Oncology 202
 ### Disclaimer
 This tool is intended for academic and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Please consult with a healthcare provider for medical guidance.
 """)
-
