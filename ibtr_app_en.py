@@ -34,7 +34,7 @@ variables = [
 
 baseline_survival = {"5y": 0.94, "10y": 0.86}
 
-st.title("IBTR Risk Estimation")
+st.title("IBTR Risk Estimation ver1.0")
 
 # Radio button selections
 age = st.radio("Age category", ["Under 40", "40s", "50s", "60s", "70 or older"])
