@@ -1,4 +1,4 @@
-# ibtr_app.py - Full Model with HR-based Calculation, Language Toggle, and Footnote
+# ibtr_app.py - Full Model with HR-based Calculation, Language Toggle, UI & Label Multilingual
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -18,8 +18,33 @@ T = {
     },
     "calculate": {"English": "Calculate IBTR Risk", "日本語": "乳房内再発リスクを計算"},
     "estimated_risk": {"English": "Estimated {year} IBTR Risk", "日本語": "推定された乳房内{year}年再発リスク"},
-    "ci": {"English": "(95% Confidence Interval: {lower:.1f}% - {upper:.1f}%)", "日本語": "(95%信頼区間: {lower:.1f}% - {upper:.1f}%)"}
+    "ci": {"English": "(95% Confidence Interval: {lower:.1f}% - {upper:.1f}%)", "日本語": "(95%信頼区間: {lower:.1f}% - {upper:.1f}%)"},
+    "age_label": {"English": "Age category", "日本語": "年齢カテゴリ"},
+    "margin_label": {"English": "Final surgical margin", "日本語": "最終断端状況"},
+    "tumor_label": {"English": "Pathological T stage", "日本語": "組織学的T分類"},
+    "grade_label": {"English": "Histologic grade", "日本語": "グレード"},
+    "lvi_label": {"English": "Lymphovascular invasion present", "日本語": "脈管侵襲あり"},
+    "hr_label": {"English": "Hormone receptor positive", "日本語": "ホルモン受容体陽性"},
+    "her2_label": {"English": "HER2 positive", "日本語": "HER2陽性"},
+    "radiation_label": {"English": "Received radiation therapy", "日本語": "放射線治療あり"},
+    "chemo_label": {"English": "Received chemotherapy", "日本語": "化学療法あり"},
+    "endocrine_label": {"English": "Received endocrine therapy", "日本語": "内分泌療法あり"},
+    "targeted_label": {"English": "Received targeted therapy", "日本語": "分子標的治療あり"}
 }
+
+# UI inputs with multilingual labels
+age = st.radio(T['age_label'][lang], ["Under 40", "40s", "50s", "60s", "70 or older"])
+margin = st.radio(T['margin_label'][lang], ["Negative margin", "Close margin", "Positive margin"])
+t_stage = st.radio(T['tumor_label'][lang], ["pT1", "pT2", "pT3"])
+grade = st.radio(T['grade_label'][lang], ["Grade 1", "Grade 2", "Grade 3"])
+
+lvi = st.checkbox(T['lvi_label'][lang])
+hormone_receptor = st.checkbox(T['hr_label'][lang])
+her2 = st.checkbox(T['her2_label'][lang])
+radiation = st.checkbox(T['radiation_label'][lang])
+chemotherapy = st.checkbox(T['chemo_label'][lang])
+targeted = st.checkbox(T['targeted_label'][lang]) if her2 else False
+endocrine = st.checkbox(T['endocrine_label'][lang]) if hormone_receptor else False
 
 # Cox model coefficients
 variables = [
