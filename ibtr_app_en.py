@@ -5,6 +5,8 @@ import numpy as np
 from datetime import date
 from io import BytesIO
 from fpdf import FPDF
+import os
+import urllib.request
 
 # Language selector
 lang = st.selectbox("Language / 言語", ["English", "日本語"])
