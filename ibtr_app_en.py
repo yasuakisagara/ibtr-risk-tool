@@ -169,3 +169,34 @@ if st.button(T["calculate"][lang]):
         file_name="ibtr_risk_report.pdf",
         mime="application/pdf"
     )
+    
+ # PDF 出力処理
+    font_path = "ipaexg.ttf"
+    if not os.path.exists(font_path):
+        urllib.request.urlretrieve(
+            "https://moji.or.jp/wp-content/ipafont/IPAexfont/ipaexg00401/ipaexg.ttf",
+            font_path
+        )
+
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.add_font("IPAexGothic", fname=font_path, uni=True)
+    pdf.set_font("IPAexGothic", size=12)
+    pdf.cell(200, 10, txt="IBTR Risk Prediction Report", ln=True, align='C')
+    pdf.set_font("IPAexGothic", size=11)
+    pdf.cell(200, 10, txt=f"Date: {date.today()}", ln=True)
+    pdf.ln(5)
+    for key, val in input_dict.items():
+        if val == 1 and key in label_map[lang]:
+            pdf.cell(200, 8, txt=label_map[lang][key], ln=True)
+    for year, (r, l, u) in results.items():
+        pdf.cell(200, 10, txt=f"{year} IBTR Risk: {r*100:.1f}% (95% CI: {l*100:.1f}% - {u*100:.1f}%)", ln=True)
+
+    buffer = BytesIO()
+    pdf.output(buffer)
+    st.download_button(
+        label=T["download"][lang],
+        data=buffer.getvalue(),
+        file_name="ibtr_risk_report.pdf",
+        mime="application/pdf"
+    )
