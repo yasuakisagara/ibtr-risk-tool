@@ -32,19 +32,19 @@ T = {
     "targeted_label": {"English": "Received targeted therapy", "日本語": "分子標的治療あり"}
 }
 
-# UI inputs with multilingual labels
-age = st.radio(T['age_label'][lang], ["Under 40", "40s", "50s", "60s", "70 or older"])
-margin = st.radio(T['margin_label'][lang], ["Negative margin", "Close margin", "Positive margin"])
-t_stage = st.radio(T['tumor_label'][lang], ["pT1", "pT2", "pT3"])
-grade = st.radio(T['grade_label'][lang], ["Grade 1", "Grade 2", "Grade 3"])
+# UI inputs with multilingual labels (with unique keys)
+age = st.radio(T['age_label'][lang], ["Under 40", "40s", "50s", "60s", "70 or older"], key="age_radio")
+margin = st.radio(T['margin_label'][lang], ["Negative margin", "Close margin", "Positive margin"], key="margin_radio")
+t_stage = st.radio(T['tumor_label'][lang], ["pT1", "pT2", "pT3"], key="tumor_radio")
+grade = st.radio(T['grade_label'][lang], ["Grade 1", "Grade 2", "Grade 3"], key="grade_radio")
 
-lvi = st.checkbox(T['lvi_label'][lang])
-hormone_receptor = st.checkbox(T['hr_label'][lang])
-her2 = st.checkbox(T['her2_label'][lang])
-radiation = st.checkbox(T['radiation_label'][lang])
-chemotherapy = st.checkbox(T['chemo_label'][lang])
-targeted = st.checkbox(T['targeted_label'][lang]) if her2 else False
-endocrine = st.checkbox(T['endocrine_label'][lang]) if hormone_receptor else False
+lvi = st.checkbox(T['lvi_label'][lang], key="lvi_check")
+hormone_receptor = st.checkbox(T['hr_label'][lang], key="hr_check")
+her2 = st.checkbox(T['her2_label'][lang], key="her2_check")
+radiation = st.checkbox(T['radiation_label'][lang], key="radiation_check")
+chemotherapy = st.checkbox(T['chemo_label'][lang], key="chemo_check")
+targeted = st.checkbox(T['targeted_label'][lang], key="targeted_check") if her2 else False
+endocrine = st.checkbox(T['endocrine_label'][lang], key="endocrine_check") if hormone_receptor else False
 
 # Cox model coefficients
 variables = [
