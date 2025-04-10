@@ -28,24 +28,39 @@ st.markdown(f"## {T['title'][lang]}")
 st.markdown(f"### {T['version'][lang]}")
 st.markdown(T['description'][lang])
 
-# --- Section: Patient Characteristics ---
-st.markdown("### Patient Characteristics")
+# Patient Characteristics (multilingual)
+if lang == "日本語":
+    st.markdown("### 患者背景")
+    age = st.radio("年齢カテゴリ", ["40歳未満", "40代", "50代", "60代", "70歳以上"])
+    margin = st.radio("最終断端状況", ["陰性断端", "近接断端", "陽性断端"])
+    t_stage = st.radio("病理T分類", ["pT1", "pT2", "pT3"])
+    grade = st.radio("組織学的グレード", ["Grade 1", "Grade 2", "Grade 3"])
+    lvi = st.checkbox("脈管侵襲あり")
+    hormone_receptor = st.checkbox("ホルモン受容体陽性")
+    her2 = st.checkbox("HER2陽性")
+else:
+    st.markdown("### Patient Characteristics")
+    age = st.radio("Age category", ["Under 40", "40s", "50s", "60s", "70 or older"])
+    margin = st.radio("Final surgical margin", ["Negative margin", "Close margin", "Positive margin"])
+    t_stage = st.radio("Pathological T stage", ["pT1", "pT2", "pT3"])
+    grade = st.radio("Histologic grade", ["Grade 1", "Grade 2", "Grade 3"])
+    lvi = st.checkbox("Lymphovascular invasion present")
+    hormone_receptor = st.checkbox("Hormone receptor positive")
+    her2 = st.checkbox("HER2 positive")
 
-age = st.radio("Age category", ["Under 40", "40s", "50s", "60s", "70 or older"])
-margin = st.radio("Final surgical margin", ["Negative margin", "Close margin", "Positive margin"])
-t_stage = st.radio("Pathological T stage", ["pT1", "pT2", "pT3"])
-grade = st.radio("Histologic grade", ["Grade 1", "Grade 2", "Grade 3"])
-lvi = st.checkbox("Lymphovascular invasion present")
-hormone_receptor = st.checkbox("Hormone receptor positive")
-her2 = st.checkbox("HER2 positive")
-
-# --- Section: Treatment Information ---
-st.markdown("### Treatment")
-
-radiation = st.checkbox("Received radiation therapy")
-chemotherapy = st.checkbox("Received chemotherapy")
-targeted = st.checkbox("Received targeted therapy") if her2 else False
-endocrine = st.checkbox("Received endocrine therapy") if hormone_receptor else False
+# Treatment Section
+if lang == "日本語":
+    st.markdown("### 治療")
+    radiation = st.checkbox("放射線治療あり")
+    chemotherapy = st.checkbox("化学療法あり")
+    targeted = st.checkbox("分子標的治療あり") if her2 else False
+    endocrine = st.checkbox("内分泌療法あり") if hormone_receptor else False
+else:
+    st.markdown("### Treatment")
+    radiation = st.checkbox("Received radiation therapy")
+    chemotherapy = st.checkbox("Received chemotherapy")
+    targeted = st.checkbox("Received targeted therapy") if her2 else False
+    endocrine = st.checkbox("Received endocrine therapy") if hormone_receptor else False
 
 # --- HR Model Coefficients ---
 variables = [
