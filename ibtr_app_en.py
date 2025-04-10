@@ -116,6 +116,8 @@ Calibration plot was made to evaluate concordance between the estimated risk and
 
 In addition, we incorporated hazard ratios from the EBCTCG meta-analyses (Lancet 2005, 2011) to account for the effects of adjuvant therapies on reducing the risk of isolated local recurrence: chemotherapy (HR 0.63, SE 0.08), endocrine therapy (HR 0.54, SE 0.07), and radiotherapy (HR 0.31, SE 0.04).
 
+The estimated cumulative incidence of ipsilateral breast tumor recurrence (IBTR) at 5 and 10 years was 6% and 14%, respectively, for patients aged    40-49 years with negative surgical margins, pT1 tumors, no lymph-vascular invasion, grade 1, hormone receptor-positive and HER2-negative status, who received no adjuvant therapy.
+
 This work was presented at the Annual Meeting of the American Society of Clinical Oncology 2025 in Chicago (Abstract number: 575).
 
 ### Disclaimer
