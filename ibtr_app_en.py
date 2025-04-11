@@ -184,12 +184,13 @@ if lang == "日本語":
 
 9,232人の患者を対象とした多施設共同研究のハザード比を用いて検証され、以下を実施しました：
 - ブートストラップ検証（500回）
-- HarrellのC-indexとBrierスコアによる性能評価
+- HarrellのC-indexとBrierスコアによる性能評価(Harrell's C: 0.61, Brier 0.031)
 - 推定リスクと実測リスクの一致度を評価するキャリブレーションプロット
 
-さらに、局所再発リスク低減効果を考慮するため、EBCTCG メタアナリシス（Lancet 2005, 2011）から得られた以下の補助療法のHRを統合しました：化学療法（HR 0.63, SE 0.08）、内分泌療法（HR 0.54, SE 0.07）、放射線治療（HR 0.31, SE 0.04）。
+さらに、局所再発リスク低減効果を考慮するため、EBCTCG メタアナリシス（Lancet 2005, 2011）から得られた以下の補助療法のHRを統合しました：化学療法（HR 0.63, SE 0.08）、内分泌療法（HR 0.54, SE 0.07）、放射線治療（HR 0.31, SE 0.04）
 
-この研究成果は、2025年の米国臨床腫瘍学会（ASCO）年次総会（演題番号: 575）にて発表されました。
+ツールの識別能や予測能には限界があり、特に対象症例が少ないポピュレーション（例：40歳未満や病理学的T3）では95%信頼区間が広く解釈に注意が必要です。
+
 
 ### 免責事項
 このツールは学術目的および教育目的のために提供されており、医学的助言、診断、治療の代替とはなりません。医療上の判断は必ず医療従事者にご相談ください。
@@ -206,12 +207,12 @@ Candidate models were developed using Cox proportional hazards regression and va
 
 We used hazard ratios from the multi-institutional cohort study comprising 9,232 patients. Validation was performed by assessing discrimination and calibration of Cox regression models:
 - Bootstrap validation (500 iterations)
-- Performance assessed using Harrell’s C-index and Brier score
+- Performance assessed using Harrell’s C-index and Brier score (Harrell’s C: 0.61, Brier score: 0.031)
 - Calibration plot was made to evaluate concordance between the estimated risk and observed risk
 
 In addition, we incorporated hazard ratios from the EBCTCG meta-analyses (Lancet 2005, 2011) to account for the effects of adjuvant therapies on reducing the risk of isolated local recurrence: chemotherapy (HR 0.63, SE 0.08), endocrine therapy (HR 0.54, SE 0.07), and radiotherapy (HR 0.31, SE 0.04).
 
-This work was presented at the Annual Meeting of the American Society of Clinical Oncology 2025 in Chicago (Abstract number: 575).
+The tool has limitations in its discrimination and predictive accuracy, particularly in subpopulations with small sample sizes (e.g., patients under 40 years or with pathological T3 tumors), where the 95% confidence intervals are wide and require cautious interpretation.
 
 ### Disclaimer
 This tool is intended for academic and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Please consult with a healthcare provider for medical guidance.
