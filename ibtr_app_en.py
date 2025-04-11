@@ -217,3 +217,37 @@ The tool has limitations in its discrimination and predictive accuracy, particul
 ### Disclaimer
 This tool is intended for academic and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Please consult with a healthcare provider for medical guidance.
 """)
+
+# --- Credit and Feedback section (multilingual) ---
+st.markdown("---")  # 区切り線
+
+if lang == "日本語":
+    st.markdown("""
+### クレジット
+本ツールは、第29回日本乳癌学会班研究（班長：坂井威彦）による多施設研究に基づいて開発されました。  
+モデルの設計およびウェブアプリの実装は、相良安昭により主に行われました。
+
+© 2025 日本乳癌学会 第29回班研究グループ  
+出典を明記した上での学術・教育目的での引用・共有を歓迎します。無断の商用利用や改変はご遠慮ください。
+
+### フィードバックのお願い
+本ツールに関するご意見や不具合のご報告などがありましたら、以下のフォームよりお寄せください（任意です）。  
+いただいた内容は今後の改良や学術的評価の参考にさせていただきます。
+
+[フィードバックフォームはこちら](https://docs.google.com/forms/d/e/1FAIpQLScZOEWa4osyS0K9Xg9Fq0p1EGeyyIOqXvfdkyxj07l9vyeGZw/viewform)
+""")
+else:
+    st.markdown("""
+### Credit
+This tool was developed based on the multi-institutional research conducted under the 29th Research Task Force of the Japanese Breast Cancer Society (Team Leader: Dr. Takehiko Sakai).  
+The model design and implementation of the web application were primarily undertaken by Yasuaki Sagara, MD, MPH.
+
+© 2025 Japanese Breast Cancer Society, Task Force 29  
+Academic and educational use with proper attribution is encouraged. Commercial use or modification without permission is not allowed.
+
+### Feedback
+If you have any comments, suggestions, or would like to report a technical issue related to this tool, please feel free to use the form below (optional).  
+Your feedback will help us improve the tool in future updates and academic evaluations.
+
+[Click here to access the feedback form](https://docs.google.com/forms/d/e/1FAIpQLScZOEWa4osyS0K9Xg9Fq0p1EGeyyIOqXvfdkyxj07l9vyeGZw/viewform)
+""")
