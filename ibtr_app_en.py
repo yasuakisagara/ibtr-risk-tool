@@ -237,7 +237,7 @@ if lang == "日本語":
 else:
     st.markdown("""
 ### Credit
-This tool was developed based on the multi-institutional research conducted under the 29th Research Task Force of the Japanese Breast Cancer Society (Team Leader: Dr. Takehiko Sakai).  
+This tool was developed based on the multi-institutional research conducted under the 29th Research Task Force of the Japanese Breast Cancer Society (Team Leader: Takehiko Sakai, MD,PhD).  
 Yasuaki Sagara, MD, MPH primarily developed the web application and underlying model.
 
 © Japanese Breast Cancer Society, Task Force 29  
