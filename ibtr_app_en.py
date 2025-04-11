@@ -227,7 +227,7 @@ if lang == "日本語":
 本ツールは、第29回日本乳癌学会班研究（班長：坂井威彦）による多施設研究に基づいて開発されました。  
 モデルの設計およびウェブアプリの実装は、相良安昭により主に行われました。
 
-© 2025 日本乳癌学会 第29回班研究グループ  
+© 日本乳癌学会 第29回班研究グループ  
 出典を明記した上での学術・教育目的での引用・共有を歓迎します。無断の商用利用や改変はご遠慮ください。
 
 ### フィードバックのお願い
@@ -242,7 +242,7 @@ else:
 This tool was developed based on the multi-institutional research conducted under the 29th Research Task Force of the Japanese Breast Cancer Society (Team Leader: Dr. Takehiko Sakai).  
 The model design and implementation of the web application were primarily undertaken by Yasuaki Sagara, MD, MPH.
 
-© 2025 Japanese Breast Cancer Society, Task Force 29  
+© Japanese Breast Cancer Society, Task Force 29  
 Academic and educational use with proper attribution is encouraged. Commercial use or modification without permission is not allowed.
 
 ### Feedback
