@@ -10,7 +10,7 @@ lang = st.selectbox("Language / 言語", ["English", "日本語"])
 T = {
     "title": {
         "English": "IBTR Risk Prediction Tool Integrating Real-World Data and Evidence from Meta-Analyses",
-        "日本語": "実臨床データとメタアナリシスに基づく乳房内再発リスク予測ツール"
+        "日本語": "リアルワールドデータとメタアナリシスに基づく乳房内再発リスク予測ツール"
     },
     "version": {"English": "Version 1.0", "日本語": "バージョン1.0"},
     "description": {
