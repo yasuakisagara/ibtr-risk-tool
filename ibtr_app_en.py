@@ -240,7 +240,7 @@ else:
     st.markdown("""
 ### Credit
 This tool was developed based on the multi-institutional research conducted under the 29th Research Task Force of the Japanese Breast Cancer Society (Team Leader: Dr. Takehiko Sakai).  
-The model design and implementation of the web application were primarily undertaken by Yasuaki Sagara, MD, MPH.
+Yasuaki Sagara, MD, MPH primarily developed the web application and underlying model.
 
 © Japanese Breast Cancer Society, Task Force 29  
 Academic and educational use with proper attribution is encouraged. Commercial use or modification without permission is not allowed.
