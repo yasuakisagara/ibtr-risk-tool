@@ -244,7 +244,7 @@ Yasuaki Sagara, MD, MPH primarily developed the web application and underlying m
 Academic and educational use with proper attribution is encouraged. Commercial use or modification without permission is not allowed.
 
 ### Feedback
-If you have any comments, suggestions, or would like to report a technical issue related to this tool, please feel free to use the form below (optional).  
+If you have any comments, suggestions, or would like to report a technical issue related to this tool, please feel free to use the form below.  
 Your feedback will help us improve the tool in future updates and academic evaluations.
 
 [Click here to access the feedback form](https://docs.google.com/forms/d/e/1FAIpQLScZOEWa4osyS0K9Xg9Fq0p1EGeyyIOqXvfdkyxj07l9vyeGZw/viewform)
