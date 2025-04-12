@@ -23,7 +23,7 @@ T = {
 }
 
 # --- Display title and description ---
-st.image("logo.png", width=180)
+st.image("logo.png", width=300)
 st.markdown(f"## {T['title'][lang]}")
 st.markdown(f"### {T['version'][lang]}")
 st.markdown(T['description'][lang])
