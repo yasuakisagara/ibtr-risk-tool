@@ -224,14 +224,13 @@ st.markdown("---")  # 区切り線
 if lang == "日本語":
     st.markdown("""
 ### クレジット
-本ツールは、日本乳癌学会第29回研究班（班長：坂井威彦）による多施設研究に基づいて開発されました。  
-モデルの設計およびウェブアプリの実装は、相良安昭により主に行われました。
+本ツールは、日本乳癌学会第29回研究班（班長：坂井威彦）による多施設研究に基づいて開発されました。モデルの設計およびウェブアプリの実装は、相良安昭により主に行われました。
 
 © 日本乳癌学会第29回研究班  
 出典を明記した上での学術・教育目的での引用・共有を歓迎します。無断の商用利用や改変はご遠慮ください。
 
 ### フィードバックのお願い
-本ツールに関するご意見や不具合のご報告などがありましたら、以下のフォームよりお寄せください（任意です）。  
+本ツールに関するご意見や不具合のご報告などがありましたら、以下のフォームよりお寄せください。  
 いただいた内容は今後の改良や学術的評価の参考にさせていただきます。
 
 [フィードバックフォームはこちら](https://docs.google.com/forms/d/e/1FAIpQLScZOEWa4osyS0K9Xg9Fq0p1EGeyyIOqXvfdkyxj07l9vyeGZw/viewform)
@@ -239,7 +238,7 @@ if lang == "日本語":
 else:
     st.markdown("""
 ### Credit
-This tool was developed based on the multi-institutional research conducted under the 29th Research Task Force of the Japanese Breast Cancer Society (Team Leader: Dr. Takehiko Sakai).  
+This tool was developed based on the multi-institutional research conducted under the 29th Research Task Force of the Japanese Breast Cancer Society (Team Leader: Takehiko Sakai, MD, PhD).
 Yasuaki Sagara, MD, MPH primarily developed the web application and underlying model.
 
 © 2025 Japanese Breast Cancer Society, Task Force 29  
