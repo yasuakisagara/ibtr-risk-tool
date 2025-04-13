@@ -205,7 +205,7 @@ The study was conducted as a collaborative project of the Japanese Breast Cancer
 
 Candidate models were developed using Cox proportional hazards regression and validated via bootstrap resampling. Model performance was assessed using Harrell’s C-index, Brier scores, calibration plots, and goodness-of-fit tests. The estimated cumulative incidence of ipsilateral breast tumor recurrence (IBTR), which served as the baseline for the prediction model, was calculated using the Fine and Gray model, treating death as a competing risk.
 
-We used hazard ratios from the multi-institutional cohort study comprising 9,232 patients. Validation was performed by assessing discrimination and calibration of Cox regression models:
+We used hazard ratios from the multi-institutional cohort study comprising 9,232 patients. Internal validation was performed by assessing discrimination and calibration of Cox regression models:
 - Bootstrap validation (500 iterations)
 - Performance assessed using Harrell’s C-index and Brier score (Harrell’s C: 0.61, Brier score: 0.031)
 - Calibration plot was made to evaluate concordance between the estimated risk and observed risk
@@ -224,7 +224,7 @@ st.markdown("---")  # 区切り線
 if lang == "日本語":
     st.markdown("""
 ### クレジット
-本ツールは、日本乳癌学会第29回研究班（班長：坂井威彦）による多施設研究に基づいて開発されました。モデルの設計およびウェブアプリの実装は、相良安昭により主に行われました。
+日本乳癌学会第29回研究班（班長：坂井威彦）において多施設共同研究が行われました。モデルの開発と検証およびウェブアプリの実装は、相良安昭により主に行われました。
 
 © 日本乳癌学会第29回研究班  
 出典を明記した上での学術・教育目的での引用・共有を歓迎します。無断の商用利用や改変はご遠慮ください。
@@ -238,9 +238,9 @@ if lang == "日本語":
 else:
     st.markdown("""
 ### Credit
-This tool was developed based on the multi-institutional research conducted under the 29th Research Task Force of the Japanese Breast Cancer Society (Team Leader: Takehiko Sakai, MD, PhD).
+This multi-institutional research was conducted under the 29th Research Task Force of the Japanese Breast Cancer Society (Team Leader: Takehiko Sakai, MD, PhD).
 
-Yasuaki Sagara, MD, MPH primarily developed the underlying model and web application.
+Yasuaki Sagara, MD, MPH primarily developed and validated the prediction model and web application tool.
 
 © 2025 Japanese Breast Cancer Society, Task Force 29  
 Academic and educational use with proper attribution is encouraged. Commercial use or modification without permission is not allowed.
