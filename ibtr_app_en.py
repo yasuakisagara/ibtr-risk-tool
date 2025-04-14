@@ -9,8 +9,8 @@ lang = st.selectbox("Language / 言語", ["English", "日本語"])
 # Translation dictionary (T) must come after lang is defined
 T = {
     "title": {
-        "English": "IBTR Risk Prediction Tool Integrating Real-World Data and Evidence from Meta-Analyses",
-        "日本語": "リアルワールドデータとメタ解析に基づくIBTR発症率予測ツール"
+        "English": "IBTR Risk Estimation Tool Integrating Real-World Data and Evidence from Meta-Analyses",
+        "日本語": "リアルワールドデータとメタ解析に基づくIBTR発症率推定ツール"
     },
     "version": {"English": "Version 1.0", "日本語": "バージョン1.0"},
     "description": {
@@ -176,7 +176,7 @@ if lang == "日本語":
     st.markdown("""
 ---
 ### 本ツールについて
-本予測モデルは、2008年から2017年に部分切除術を受けた浸潤性乳がん女性を対象とした多施設後ろ向きコホート研究により開発・検証されました。全摘術への移行、術前化学療法の使用、両側・多発がん、主要データの欠落などの症例は除外されました。
+本リスク推定ツールは、2008年から2017年に部分切除術を受けた浸潤性乳がん女性を対象とした多施設後ろ向きコホート研究により開発・検証されました。全摘術への移行、術前化学療法の使用、両側・多発がん、主要データの欠落などの症例は除外されました。
 
 本研究は日本乳癌学会共同研究グループによる共同研究として実施され、以下の日本国内の7つの施設が参加しました：がん研究会有明病院、聖路加国際病院、京都大学医学部附属病院、大阪公立大学医学部附属病院、三重大学医学部附属病院、岡山大学病院、博愛会相良病院
 
@@ -191,6 +191,8 @@ if lang == "日本語":
 
 ツールの識別能や予測能には限界があり、特に対象症例が少ないポピュレーション（例：40歳未満や病理学的T3）では95%信頼区間が広く解釈に注意が必要です。
 
+学会や論文にて本ツールの開発方法について近日報告予定です。報告後に参考文献を掲示いたします。
+
 
 ### 免責事項
 このツールは学術目的および教育目的のために提供されており、医学的助言、診断、治療の代替とはなりません。医療上の判断は必ず医療従事者にご相談ください。
@@ -199,7 +201,7 @@ else:
     st.markdown("""
 ---
 ### About this tool
-This prediction model was developed and validated through a multi-center retrospective cohort study including women who underwent partial mastectomy for invasive breast cancer between 2008 and 2017. Cases involving conversion to mastectomy, use of neoadjuvant chemotherapy, bilateral/multiple cancers, or missing key data were excluded.
+This risk estimation tool was developed and validated through a multi-center retrospective cohort study including women who underwent partial mastectomy for invasive breast cancer between 2008 and 2017. Cases involving conversion to mastectomy, use of neoadjuvant chemotherapy, bilateral/multiple cancers, or missing key data were excluded.
 
 The study was conducted as a collaborative project of the Japanese Breast Cancer Society Collaborative Research Group and involved seven institutions in Japan: Cancer Institute Hospital of JFCR, St. Luke's International Hospital, Kyoto University Hospital, Osaka Metropolitan University Hospital, Mie University Hospital, Okayama University Hospital, and Hakuaikai Sagara Hospital.
 
@@ -213,6 +215,8 @@ We used hazard ratios from the multi-institutional cohort study comprising 9,232
 In addition, we incorporated hazard ratios from the EBCTCG meta-analyses (Lancet 2005, 2011) to account for the effects of adjuvant therapies on reducing the risk of isolated local recurrence: chemotherapy (HR 0.63, SE 0.08), endocrine therapy (HR 0.54, SE 0.07), and radiotherapy (HR 0.31, SE 0.04).
 
 The tool has limitations in its discrimination and predictive accuracy, particularly in subpopulations with small sample sizes (e.g., patients under 40 years or with pathological T3 tumors), where the 95% confidence intervals are wide and require cautious interpretation.
+
+The development methodology of this tool will be reported at academic conferences and in peer-reviewed publications in the near future. The references will be provided after the presentation and publication.
 
 ### Disclaimer
 This tool is intended for academic and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Please consult with a healthcare provider for medical guidance.
