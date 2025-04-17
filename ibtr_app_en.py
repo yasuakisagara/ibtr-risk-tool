@@ -36,7 +36,7 @@ if lang == "日本語":
     t_stage = st.radio("病理T分類", ["pT1", "pT2", "pT3"])
     grade = st.radio("結等学的グレード", ["Grade 1", "Grade 2", "Grade 3"])
     lvi = st.checkbox("脈管侵撃あり")
-    hormone_receptor = st.checkbox("ホルモン受射体陰性")
+    hormone_receptor = st.checkbox("ホルモン受容体陽性")
     her2 = st.checkbox("HER2陰性")
 else:
     st.markdown("### Patient Characteristics")
