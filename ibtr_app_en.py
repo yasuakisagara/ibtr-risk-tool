@@ -12,7 +12,7 @@ T = {
         "English": "IBTR Risk Estimation Tool Integrating Real-World Data and Evidence from Meta-Analyses",
         "日本語": "リアルワールドデータとメタ解析に基づくIBTR発症率推定ツール"
     },
-    "version": {"English": "Version 1.0", "日本語": "バージョン1.0"},
+    "version": {"English": "Version 1.5", "日本語": "バージョン1.5"},
     "description": {
         "English": "Please enter the patient's clinical and pathological information below.",
         "日本語": "以下に患者の臨床および病理情報を入力してください。"
@@ -182,9 +182,9 @@ if lang == "日本語":
 
 モデルは Cox 比例ハザード回帰を用いて構築され、ブートストラップ再サンプリングにより検証されました。モデル性能は Harrell のC-index、Brierスコア、キャリブレーションプロット、および適合度検定で評価されました。再発予測のベースラインとして、Fine and Gray モデルにより死亡を競合リスクとした IBTR の累積発生率を使用しました。
 
-9,232人の患者を対象とした多施設共同研究のハザード比を用いて検証され、以下を実施しました：
+8,938人の患者を対象とした多施設共同研究のハザード比を用いて検証され、以下を実施しました：
 - ブートストラップ検証（500回）
-- HarrellのC-indexとBrierスコアによる性能評価(Harrell's C: 0.61, Brier 0.031)
+- HarrellのC-indexとBrierスコアによる性能評価(Harrell's C: 0.65, Brier 0.036)
 - 推定リスクと実測リスクの一致度を評価するキャリブレーションプロット
 
 さらに、局所再発リスク低減効果を考慮するため、EBCTCG メタアナリシス（Lancet 2005, 2011）から得られた以下の補助療法のHRを統合しました：化学療法（HR 0.63, SE 0.08）、内分泌療法（HR 0.54, SE 0.07）、放射線治療（HR 0.31, SE 0.04）
@@ -207,9 +207,9 @@ The study was conducted as a collaborative project of the Japanese Breast Cancer
 
 Candidate models were developed using Cox proportional hazards regression and validated via bootstrap resampling. Model performance was assessed using Harrell’s C-index, Brier scores, calibration plots, and goodness-of-fit tests. The estimated cumulative incidence of ipsilateral breast tumor recurrence (IBTR), which served as the baseline for the prediction model, was calculated using the Fine and Gray model, treating death as a competing risk.
 
-We used hazard ratios from the multi-institutional cohort study comprising 9,232 patients. Internal validation was performed by assessing discrimination and calibration of Cox regression models:
+We used hazard ratios from the multi-institutional cohort study comprising 8,938 patients. Internal validation was performed by assessing discrimination and calibration of Cox regression models:
 - Bootstrap validation (500 iterations)
-- Performance assessed using Harrell’s C-index and Brier score (Harrell’s C: 0.61, Brier score: 0.031)
+- Performance assessed using Harrell’s C-index and Brier score (Harrell’s C: 0.65, Brier score: 0.036)
 - Calibration plot was made to evaluate concordance between the estimated risk and observed risk
 
 In addition, we incorporated hazard ratios from the EBCTCG meta-analyses (Lancet 2005, 2011) to account for the effects of adjuvant therapies on reducing the risk of isolated local recurrence: chemotherapy (HR 0.63, SE 0.08), endocrine therapy (HR 0.54, SE 0.07), and radiotherapy (HR 0.31, SE 0.04).
