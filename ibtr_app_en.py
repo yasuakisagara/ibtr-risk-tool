@@ -1,4 +1,4 @@
-# ibtr_app.py - Full Model with HR-based Calculation, Organized by Section (Corrected lang position)
+## ibtr_app.py - Full Model with HR-based Calculation, ver1.5
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -17,8 +17,8 @@ T = {
         "English": "Please enter the patient's clinical and pathological information below.",
         "日本語": "以下に患者の臨床および病理情報を入力してください。"
     },
-    "calculate": {"English": "Calculate IBTR Risk", "日本語": "乳房内再発リスクを計算"},
-    "estimated_risk": {"English": "Estimated IBTR risk at", "日本語": "推定された乳房内再発リスク（"},
+    "calculate": {"English": "Calculate IBTR Risk", "日本語": "乳戸内再発リスクを計算"},
+    "estimated_risk": {"English": "Estimated IBTR risk at", "日本語": "推定された乳戸内再発リスク（"},
     "ci": {"English": "95% Confidence Interval", "日本語": "95%信頼区間"}
 }
 
@@ -34,10 +34,10 @@ if lang == "日本語":
     age = st.radio("年齢カテゴリ", ["40歳未満", "40代", "50代", "60代", "70歳以上"])
     margin = st.radio("最終断端状況", ["陰性断端", "近接断端(<5mm)", "陽性断端"])
     t_stage = st.radio("病理T分類", ["pT1", "pT2", "pT3"])
-    grade = st.radio("組織学的グレード", ["Grade 1", "Grade 2", "Grade 3"])
-    lvi = st.checkbox("脈管侵襲あり")
-    hormone_receptor = st.checkbox("ホルモン受容体陽性")
-    her2 = st.checkbox("HER2陽性")
+    grade = st.radio("結等学的グレード", ["Grade 1", "Grade 2", "Grade 3"])
+    lvi = st.checkbox("脈管侵撃あり")
+    hormone_receptor = st.checkbox("ホルモン受射体陰性")
+    her2 = st.checkbox("HER2陰性")
 else:
     st.markdown("### Patient Characteristics")
     age = st.radio("Age category", ["Under 40", "40s", "50s", "60s", "70 or older"])
@@ -53,41 +53,41 @@ if lang == "日本語":
     st.markdown("### 治療")
     radiation = st.checkbox("放射線治療あり")
     chemotherapy = st.checkbox("化学療法あり")
-    targeted = st.checkbox("分子標的治療あり") if her2 else False
-    endocrine = st.checkbox("内分泌療法あり") if hormone_receptor else False
+    targeted = st.checkbox("抗HER2治療あり") if her2 else False
+    endocrine = st.checkbox("内分治療あり") if hormone_receptor else False
 else:
     st.markdown("### Treatment")
     radiation = st.checkbox("Received radiation therapy")
     chemotherapy = st.checkbox("Received chemotherapy")
-    targeted = st.checkbox("Received targeted therapy") if her2 else False
+    targeted = st.checkbox("Received Anti-HER2 therapy") if her2 else False
     endocrine = st.checkbox("Received endocrine therapy") if hormone_receptor else False
 
-# --- HR Model Coefficients ---
+# --- HR Model Coefficients  ---
 variables = [
-    ("agecategory_<40", "Under 40", 0.925107351, 0.4472657),
+    ("agecategory_<40", "Under 40", 0.874573, 0.417364),
     ("agecategory_40s", "40s", 0.0, 0.0),
-    ("agecategory_50s", "50s", -0.260198172, 0.1329072),
-    ("agecategory_60s", "60s", -0.453197487, 0.1193687),
-    ("agecategory_70+", "70 or older", -0.594712977, 0.1222106),
+    ("agecategory_50s", "50s", -0.182361, 0.136322),
+    ("agecategory_60s", "60s", -0.267784, 0.132929),
+    ("agecategory_70+", "70 or older", -0.489379, 0.129613),
     ("finalmargin_negative", "Negative margin", 0.0, 0.0),
-    ("finalmargin_close(<5mm)", "Close margin(<5mm)", 0.533038286, 0.2443688),
-    ("finalmargin_positive", "Positive margin", 0.817501467, 0.4696936),
+    ("finalmargin_close(<5mm)", "Close margin(<5mm)", 0.511362, 0.227433),
+    ("finalmargin_positive", "Positive margin", 0.861087, 0.456145),
     ("pT_1", "pT1", 0.0, 0.0),
-    ("pT_2", "pT2", 0.215485503, 0.195763),
-    ("pT_3", "pT3", 0.680535486, 1.414311),
+    ("pT_2", "pT2", 0.134593, 0.170066),
+    ("pT_3", "pT3", 0.682241, 1.413398),
     ("grade_1", "Grade 1", 0.0, 0.0),
-    ("grade_2", "Grade 2", 0.135309436, 0.1691389),
-    ("grade_3", "Grade 3", 0.396416963, 0.3100963),
-    ("lvi", "Lymphovascular invasion (LVI)", 0.445005642, 0.2203228),
-    ("hormone_receptor", "Hormone receptor positive", -0.141806451, 0.2086384),
-    ("her2", "HER2 positive", 0.407543613, 0.4333971),
+    ("grade_2", "Grade 2", 0.192654, 0.171228),
+    ("grade_3", "Grade 3", 0.413136, 0.297550),
+    ("lvi", "Lymphovascular invasion (LVI)", 0.415052, 0.201020),
+    ("hormone_receptor", "Hormone receptor positive", -0.107287, 0.213524),
+    ("her2", "HER2 positive", 0.383047, 0.408019),
     ("radiation", "Received radiation therapy", -1.171182982, 0.04),
     ("chemotherapy", "Received chemotherapy", -0.46203546, 0.08),
     ("endocrine", "Received endocrine therapy", -0.616186139, 0.07),
-    ("targeted", "Received targeted therapy", -0.203693927, 0.2783889),
+    ("targeted", "Received Anti-HER2 therapy", -0.195477, 0.264011),
 ]
 
-baseline_survival = {"5y": 0.94, "10y": 0.86}
+baseline_survival = {"5y": 0.9425415, "10y": 0.8746572}
 
 # --- Input dictionary ---
 
@@ -165,7 +165,7 @@ if st.button(T['calculate'][lang]):
     for year, (r, lower, upper) in results.items():
         if lang == "日本語":
             year_jp = year.replace("y", "年")
-            st.subheader(f"推定された乳房内{year_jp}再発リスク : {r*100:.1f}%")
+            st.subheader(f"推定された乳戸内{year_jp}再発リスク : {r*100:.1f}%")
             st.write(f"95%信頼区間: {lower*100:.1f}% - {upper*100:.1f}%")
         else:
             st.subheader(f"Estimated {year} IBTR Risk: {r*100:.1f}%")
