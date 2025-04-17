@@ -221,6 +221,22 @@ The development methodology of this tool will be reported at academic conference
 ### Disclaimer
 This tool is intended for academic and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Please consult with a healthcare provider for medical guidance.
 """)
+    
+# Footnote section (multilingual)
+if lang == "日本語":
+    st.markdown("""
+---
+### バージョン履歴
+- ver1.0（2025年4月11日公表）：初期バージョン
+- ver1.5（2025年4月17日更新）：データ整合性の見直しを行い、一部症例のIBTRイベント情報および分類を修正。
+""")
+else:
+    st.markdown("""
+---
+### Version History
+- ver1.0 (Released on April 11, 2025): Initial version
+- ver1.5 (Updated on April 17, 2025): Minor revisions made to ensure data consistency, including adjustments to IBTR event classification.
+""")
 
 # --- Credit and Feedback section (multilingual) ---
 st.markdown("---")  # 区切り線
@@ -255,3 +271,5 @@ Your feedback will help us improve the tool in future updates and academic evalu
 
 [Click here to access the feedback form](https://docs.google.com/forms/d/e/1FAIpQLScZOEWa4osyS0K9Xg9Fq0p1EGeyyIOqXvfdkyxj07l9vyeGZw/viewform)
 """)
+
+
