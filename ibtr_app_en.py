@@ -37,7 +37,7 @@ if lang == "日本語":
     grade = st.radio("結等学的グレード", ["Grade 1", "Grade 2", "Grade 3"])
     lvi = st.checkbox("脈管侵撃あり")
     hormone_receptor = st.checkbox("ホルモン受容体陽性")
-    her2 = st.checkbox("HER2陰性")
+    her2 = st.checkbox("HER2陽性")
 else:
     st.markdown("### Patient Characteristics")
     age = st.radio("Age category", ["Under 40", "40s", "50s", "60s", "70 or older"])
