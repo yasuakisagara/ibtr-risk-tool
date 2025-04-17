@@ -51,10 +51,10 @@ else:
 # Treatment Section
 if lang == "日本語":
     st.markdown("### 治療")
-    radiation = st.checkbox("放射線治療あり")
+    radiation = st.checkbox("放射線療法あり")
     chemotherapy = st.checkbox("化学療法あり")
-    targeted = st.checkbox("抗HER2治療あり") if her2 else False
-    endocrine = st.checkbox("内分治療あり") if hormone_receptor else False
+    targeted = st.checkbox("抗HER2療法あり") if her2 else False
+    endocrine = st.checkbox("内分泌療法あり") if hormone_receptor else False
 else:
     st.markdown("### Treatment")
     radiation = st.checkbox("Received radiation therapy")
