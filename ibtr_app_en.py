@@ -1,4 +1,4 @@
-## ibtr_app.py - Full Model with HR-based Calculation, ver1.5
+## ibtr_app.py - Full Model with HR-based Calculation, ver1.5　logo cloudinary
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -23,11 +23,8 @@ T = {
 }
 
 # --- Display title and description ---
-logo_url = "https://raw.githubusercontent.com/YasuakiSagara/ibtr-risk-tool/main/images/logo.png"
-try:
-    st.image("logo.png", width=250)
-except:
-    st.image(logo_url, width=250)
+logo_url = "https://res.cloudinary.com/dqlawunmg/image/upload/v1745049473/logo_pjk79t.png"
+st.image(logo_url, width=250)
     
 st.markdown(f"## {T['title'][lang]}")
 st.markdown(f"### {T['version'][lang]}")
