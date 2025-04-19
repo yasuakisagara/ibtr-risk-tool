@@ -49,9 +49,9 @@ else:
     margin = st.radio("Final surgical margin", ["Negative margin", "Close margin(<5mm)", "Positive margin"])
     t_stage = st.radio("Pathological T stage", ["pT1", "pT2", "pT3"])
     grade = st.radio("Histologic grade", ["Grade 1", "Grade 2", "Grade 3"])
-    lvi = st.checkbox("Lymphovascular invasion present")
-    hormone_receptor = st.checkbox("Hormone receptor positive")
-    her2 = st.checkbox("HER2 positive")
+    lvi = st.checkbox("Lymphovascular invasion: Present")
+    hormone_receptor = st.checkbox("Hormone receptor: Positive")
+    her2 = st.checkbox("HER2 status: Positive")
 
 # Treatment Section
 if lang == "日本語":
