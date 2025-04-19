@@ -23,7 +23,12 @@ T = {
 }
 
 # --- Display title and description ---
-st.image("logo.png", width=250)
+logo_url = "https://raw.githubusercontent.com/YasuakiSagara/ibtr-risk-tool/main/images/logo.png"
+try:
+    st.image("logo.png", width=250)
+except:
+    st.image(logo_url, width=250)
+    
 st.markdown(f"## {T['title'][lang]}")
 st.markdown(f"### {T['version'][lang]}")
 st.markdown(T['description'][lang])
