@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 # Language selector must come first
 lang = st.selectbox("Language / 言語", ["English", "日本語"])
@@ -168,12 +169,31 @@ for year, S0 in baseline_survival.items():
 if st.button(T['calculate'][lang]):
     for year, (r, lower, upper) in results.items():
         if lang == "日本語":
-            year_jp = year.replace("y", "年")
-            st.subheader(f"推定された乳戸内{year_jp}再発リスク : {r*100:.1f}%")
-            st.write(f"95%信頼区間: {lower*100:.1f}% - {upper*100:.1f}%")
+            year_label = year.replace("y", "年")
+            st.markdown(f"### {year_label} 再発リスク")
         else:
-            st.subheader(f"Estimated {year} IBTR Risk: {r*100:.1f}%")
-            st.write(f"95% Confidence Interval: {lower*100:.1f}% - {upper*100:.1f}%")
+            st.markdown(f"### Estimated {year} IBTR Risk")
+
+        # Display risk point and CI numerically
+        st.markdown(f"**{r*100:.1f}%**")
+        if lang == "日本語":
+            st.caption(f"95%信頼区間: {lower*100:.1f}% - {upper*100:.1f}%")
+        else:
+            st.caption(f"95% Confidence Interval: {lower*100:.1f}% - {upper*100:.1f}%")
+
+        # Draw CI bar with matplotlib
+        fig, ax = plt.subplots(figsize=(6, 1.2))
+        ax.hlines(1, lower, upper, colors='gray', linewidth=6)
+        ax.plot(r, 1, 'o', color='red' if year == "5y" else 'orange', markersize=12)
+        ax.set_xlim(0, 1)
+        ax.set_yticks([])
+        ax.set_xticks([0.1, 0.2, 0.3, 0.4, 0.5])
+        ax.set_xlabel("Probability")
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['left'].set_visible(False)
+        ax.spines['bottom'].set_color('lightgray')
+        st.pyplot(fig)
 
 # Footnote section (multilingual)
 if lang == "日本語":
@@ -275,5 +295,3 @@ Your feedback will help us improve the tool in future updates and academic evalu
 
 [Click here to access the feedback form](https://docs.google.com/forms/d/e/1FAIpQLScZOEWa4osyS0K9Xg9Fq0p1EGeyyIOqXvfdkyxj07l9vyeGZw/viewform)
 """)
-
-
