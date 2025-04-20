@@ -201,7 +201,7 @@ if st.button(T['calculate'][lang]):
             mode='markers+text',
             marker=dict(
                 color='orange' if year == "5y" else 'red',
-                size=18,
+                size=9,
                 line=dict(color='black', width=1)
             ),
             text=[f"{r*100:.1f}%"],
@@ -232,7 +232,7 @@ if st.button(T['calculate'][lang]):
             showlegend=False
         )
 
-        st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
 
 # Footnote section (multilingual)
 if lang == "日本語":
