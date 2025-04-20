@@ -175,65 +175,64 @@ if st.button(T['calculate'][lang]):
         else:
             st.markdown(f"### Estimated {year} IBTR Risk")
 
-        # Display risk point and CI numerically
+        # 表示：推定リスク値
         st.markdown(f"<div style='font-size: 24px; font-weight: bold;'>{r*100:.1f}%</div>", unsafe_allow_html=True)
         if lang == "日本語":
             st.caption(f"95%信頼区間: {lower*100:.1f}% - {upper*100:.1f}%")
         else:
             st.caption(f"95% Confidence Interval: {lower*100:.1f}% - {upper*100:.1f}%")
 
-# Draw CI bar with Plotly
-fig = go.Figure()
+        # PlotlyによるCIバーの描画
+        fig = go.Figure()
 
-# CIバー（線の色と太さをカスタマイズ）
-fig.add_trace(go.Scatter(
-    x=[lower, upper],
-    y=[1, 1],
-    mode='lines',
-    line=dict(color='darkgray', width=6),
-    name="95% CI"
-))
+        # 信頼区間線
+        fig.add_trace(go.Scatter(
+            x=[lower, upper],
+            y=[1, 1],
+            mode='lines',
+            line=dict(color='darkgray', width=6),
+            name="95% CI"
+        ))
 
-# 中央のリスク点
-fig.add_trace(go.Scatter(
-    x=[r],
-    y=[1],
-    mode='markers+text',
-    marker=dict(
-        color='orange' if year == "5y" else 'red',
-        size=18,
-        line=dict(color='black', width=1)
-    ),
-    text=[f"{r*100:.1f}%"],
-    textposition="top center",
-    name="Estimated Risk"
-))
+        # 推定リスクの点＋値
+        fig.add_trace(go.Scatter(
+            x=[r],
+            y=[1],
+            mode='markers+text',
+            marker=dict(
+                color='orange' if year == "5y" else 'red',
+                size=18,
+                line=dict(color='black', width=1)
+            ),
+            text=[f"{r*100:.1f}%"],
+            textposition="top center",
+            name="Estimated Risk"
+        ))
 
-# 注釈を追加
-fig.add_annotation(
-    x=(lower + upper) / 2,
-    y=1.05,
-    text="95% Confidence Interval",
-    showarrow=False,
-    font=dict(size=12, color="gray")
-)
+        # ラベル注釈
+        fig.add_annotation(
+            x=(lower + upper) / 2,
+            y=1.05,
+            text="95% Confidence Interval",
+            showarrow=False,
+            font=dict(size=12, color="gray")
+        )
 
-# レイアウト調整
-fig.update_layout(
-    height=140,
-    margin=dict(l=30, r=30, t=30, b=10),
-    xaxis=dict(
-        range=[0, 1],
-        title="Probability",
-        tickvals=[0.1, 0.2, 0.3, 0.4, 0.5],
-        showgrid=False
-    ),
-    yaxis=dict(visible=False),
-    showlegend=False
-)
+        # レイアウト設定
+        fig.update_layout(
+            height=140,
+            margin=dict(l=30, r=30, t=30, b=10),
+            xaxis=dict(
+                range=[0, 1],
+                title="Probability",
+                tickvals=[0.1, 0.2, 0.3, 0.4, 0.5],
+                showgrid=False
+            ),
+            yaxis=dict(visible=False),
+            showlegend=False
+        )
 
-# 表示
-st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True)
 
 # Footnote section (multilingual)
 if lang == "日本語":
