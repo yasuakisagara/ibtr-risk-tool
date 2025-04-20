@@ -182,9 +182,9 @@ if st.button(T['calculate'][lang]):
             st.caption(f"95% Confidence Interval: {lower*100:.1f}% - {upper*100:.1f}%")
 
         # Draw CI bar with matplotlib
-        fig, ax = plt.subplots(figsize=(4.5, 0.8))
-        ax.hlines(1, lower, upper, colors='gray', linewidth=3)
-        ax.plot(r, 1, 'o', color='red' if year == "5y" else 'orange', markersize=10)
+        fig, ax = plt.subplots(figsize=(4.2, 0.7))  # slightly smaller plot
+        ax.hlines(1, lower, upper, colors='gray', linewidth=2)  # thinner CI line
+        ax.plot(r, 1, 'o', color='orange' if year == "5y" else 'red', markersize=8)  # smaller dot, color swapped
         ax.set_xlim(0, 1)
         ax.set_yticks([])
         ax.set_xticks([0.1, 0.2, 0.3, 0.4, 0.5])
