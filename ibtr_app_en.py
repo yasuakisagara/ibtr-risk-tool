@@ -175,16 +175,16 @@ if st.button(T['calculate'][lang]):
             st.markdown(f"### Estimated {year} IBTR Risk")
 
         # Display risk point and CI numerically
-        st.markdown(f"**{r*100:.1f}%**")
+        st.markdown(f"<div style='font-size: 24px; font-weight: bold;'>{r*100:.1f}%</div>", unsafe_allow_html=True)
         if lang == "日本語":
             st.caption(f"95%信頼区間: {lower*100:.1f}% - {upper*100:.1f}%")
         else:
             st.caption(f"95% Confidence Interval: {lower*100:.1f}% - {upper*100:.1f}%")
 
         # Draw CI bar with matplotlib
-        fig, ax = plt.subplots(figsize=(6, 1.2))
-        ax.hlines(1, lower, upper, colors='gray', linewidth=6)
-        ax.plot(r, 1, 'o', color='red' if year == "5y" else 'orange', markersize=12)
+        fig, ax = plt.subplots(figsize=(4.5, 0.8))
+        ax.hlines(1, lower, upper, colors='gray', linewidth=3)
+        ax.plot(r, 1, 'o', color='red' if year == "5y" else 'orange', markersize=10)
         ax.set_xlim(0, 1)
         ax.set_yticks([])
         ax.set_xticks([0.1, 0.2, 0.3, 0.4, 0.5])
