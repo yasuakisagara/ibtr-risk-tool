@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
+import plotly.graph_objects as go
 
 # Language selector must come first
 lang = st.selectbox("Language / 言語", ["English", "日本語"])
