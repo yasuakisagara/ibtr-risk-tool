@@ -171,7 +171,7 @@ if st.button(T['calculate'][lang]):
     for year, (r, lower, upper) in results.items():
         if lang == "日本語":
             year_label = year.replace("y", "年") if "y" in year else f"{year}年"
-            st.markdown(f"### {year_label} 再発リスク")
+            st.markdown(f"### {year_label} 乳房内再発リスク")
         else:
             st.markdown(f"### Estimated {year} IBTR Risk")
 
