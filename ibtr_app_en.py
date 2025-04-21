@@ -232,7 +232,6 @@ if st.button(T['calculate'][lang]):
             showlegend=False
         )
 
-st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
 
 # Footnote section (multilingual)
 if lang == "日本語":
