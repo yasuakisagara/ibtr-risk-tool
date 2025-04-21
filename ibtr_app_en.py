@@ -170,22 +170,21 @@ for year, S0 in baseline_survival.items():
 if st.button(T['calculate'][lang]):
     for year, (r, lower, upper) in results.items():
         if lang == "日本語":
-            year_label = year.replace("y", "年")
+            year_label = year.replace("y", "年") if "y" in year else f"{year}年"
             st.markdown(f"### {year_label} 再発リスク")
         else:
             st.markdown(f"### Estimated {year} IBTR Risk")
 
-        # 表示：推定リスク値
         st.markdown(f"<div style='font-size: 24px; font-weight: bold;'>{r*100:.1f}%</div>", unsafe_allow_html=True)
         if lang == "日本語":
             st.caption(f"95%信頼区間: {lower*100:.1f}% - {upper*100:.1f}%")
         else:
             st.caption(f"95% Confidence Interval: {lower*100:.1f}% - {upper*100:.1f}%")
 
-        # PlotlyによるCIバーの描画
+        # PlotlyによるCIバー
         fig = go.Figure()
 
-        # 信頼区間線
+        # CI線
         fig.add_trace(go.Scatter(
             x=[lower, upper],
             y=[1, 1],
@@ -194,13 +193,13 @@ if st.button(T['calculate'][lang]):
             name="95% CI"
         ))
 
-        # 推定リスクの点＋値
+        # 推定リスク点
         fig.add_trace(go.Scatter(
             x=[r],
             y=[1],
             mode='markers+text',
             marker=dict(
-                color='orange' if year == "5y" else 'red',
+                color='orange' if str(year).startswith("5") else 'red',  # 5yはorange、10yはred
                 size=9,
                 line=dict(color='black', width=1)
             ),
@@ -209,7 +208,7 @@ if st.button(T['calculate'][lang]):
             name="Estimated Risk"
         ))
 
-        # ラベル注釈
+        # 注釈
         fig.add_annotation(
             x=(lower + upper) / 2,
             y=1.05,
@@ -218,7 +217,7 @@ if st.button(T['calculate'][lang]):
             font=dict(size=12, color="gray")
         )
 
-        # レイアウト設定
+        # レイアウト
         fig.update_layout(
             height=140,
             margin=dict(l=30, r=30, t=30, b=10),
@@ -230,8 +229,9 @@ if st.button(T['calculate'][lang]):
             ),
             yaxis=dict(visible=False),
             showlegend=False
-         )
-    st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+        )
+
+        st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
 # Footnote section (multilingual)
 if lang == "日本語":
     st.markdown("""
