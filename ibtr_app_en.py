@@ -208,15 +208,6 @@ if st.button(T['calculate'][lang]):
             name="Estimated Risk"
         ))
 
-        # 注釈
-        fig.add_annotation(
-            x=(lower + upper) / 2,
-            y=1.05,
-            text="95% Confidence Interval",
-            showarrow=False,
-            font=dict(size=12, color="gray")
-        )
-
         # レイアウト
         fig.update_layout(
             height=140,
