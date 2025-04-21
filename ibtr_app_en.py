@@ -225,6 +225,7 @@ if st.button(T['calculate'][lang]):
                 range=[0, 1],
                 title="Probability",
                 tickvals=[0.1, 0.2, 0.3, 0.4, 0.5],
+                ticktext=["10%", "20%", "30%", "40%", "50%"],
                 showgrid=False
             ),
             yaxis=dict(visible=False),
