@@ -11,8 +11,8 @@ lang = st.selectbox("Language / 言語", ["English", "日本語"])
 # Translation dictionary (T) must come after lang is defined
 T = {
     "title": {
-        "English": "IBTR Risk Estimation\nIntegrating Real-World Data\nand Evidence from Meta-Analyses",
-        "日本語": "リアルワールドデータと\nメタ解析に基づく\nIBTR発症率推定ツール"
+    "English": "IBTR Risk Estimation Tool<br>Integrating Real-World Data and Evidence from Meta-Analyses",
+    "日本語": "リアルワールドデータと<br>メタ解析に基づくIBTR発症率推定ツール"
     },
     "version": {"English": "Version 1.5", "日本語": "バージョン1.5"},
     "description": {
@@ -24,13 +24,15 @@ T = {
     "ci": {"English": "95% Confidence Interval", "日本語": "95%信頼区間"}
 }
 
-# --- Display title and description ---
-logo_url = "https://res.cloudinary.com/dqlawunmg/image/upload/v1745049473/logo_pjk79t.png"
-st.image(logo_url, width=250)
-    
-st.markdown(f"## {T['title'][lang]}")
-st.markdown(f"### {T['version'][lang]}")
-st.markdown(T['description'][lang])
+# --- Display logo, title, version, and description centered ---
+st.markdown(f"""
+<div style='text-align: center;'>
+    <img src="{logo_url}" width="250"><br>
+    <h2 style="margin-bottom: 0;">{T['title'][lang]}</h2>
+    <h4 style="margin-top: 0;">{T['version'][lang]}</h4>
+    <p>{T['description'][lang]}</p>
+</div>
+""", unsafe_allow_html=True)
 
 # Patient Characteristics (multilingual)
 if lang == "日本語":
