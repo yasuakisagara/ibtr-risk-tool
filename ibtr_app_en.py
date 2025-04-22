@@ -24,21 +24,17 @@ T = {
     "ci": {"English": "95% Confidence Interval", "日本語": "95%信頼区間"}
 }
 
-# --- Display logo, title, version, and description centered ---
-st.markdown("""
-<div style='text-align: center;'>
-    <img src="https://res.cloudinary.com/dqlawunmg/image/upload/v1745049473/logo_pjk79t.png" width="250"><br>
-    <h2 style="margin-bottom: 0;">IBTR Risk Estimation</h2>
-    <p style="font-size: 16px; color: gray; margin-top: 4px;">
-        Integrating Real-World Data and Evidence from Meta-Analyses
-    </p>
-    <h4 style="margin-top: 10px;">{version}</h4>
-    <p>{description}</p>
-</div>
-""".format(
-    version=T['version'][lang],
-    description=T['description'][lang].replace("\n", "<br>")
-), unsafe_allow_html=True)
+
+# --- Display logo, title, version, and description (left-aligned) ---
+st.image("https://res.cloudinary.com/dqlawunmg/image/upload/v1745049473/logo_pjk79t.png", width=250)
+
+main_title = "IBTR Risk Estimation" if lang == "English" else "乳房内再発リスク推定ツール"
+subtitle = "Integrating Real-World Data and Evidence from Meta-Analyses" if lang == "English" else "リアルワールドデータとメタ解析に基づく"
+
+st.markdown(f"## {main_title}")
+st.markdown(f"**{subtitle}**")
+st.markdown(f"**{T['version'][lang]}**")
+st.markdown(T['description'][lang].replace("\\n", "<br>"), unsafe_allow_html=True)
 
 # Patient Characteristics (multilingual)
 if lang == "日本語":
