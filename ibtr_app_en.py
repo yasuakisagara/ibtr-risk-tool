@@ -25,14 +25,18 @@ T = {
 }
 
 # --- Display logo, title, version, and description centered ---
-st.markdown(f"""
+st.markdown("""
 <div style='text-align: center;'>
-    <img src="{logo_url}" width="250"><br>
-    <h2 style="margin-bottom: 0;">{T['title'][lang]}</h2>
-    <h4 style="margin-top: 0;">{T['version'][lang]}</h4>
-    <p>{T['description'][lang]}</p>
+    <img src="https://res.cloudinary.com/dqlawunmg/image/upload/v1745049473/logo_pjk79t.png" width="250"><br>
+    <h2 style="margin-bottom: 0;">{title}</h2>
+    <h4 style="margin-top: 0;">{version}</h4>
+    <p>{description}</p>
 </div>
-""", unsafe_allow_html=True)
+""".format(
+    title=T['title'][lang],
+    version=T['version'][lang],
+    description=T['description'][lang]
+), unsafe_allow_html=True)
 
 # Patient Characteristics (multilingual)
 if lang == "日本語":
