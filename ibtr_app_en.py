@@ -170,8 +170,20 @@ for year, S0 in baseline_survival.items():
     risk_upper = 1 - S0 ** np.exp(xb + 1.96 * se_total)
     results[year] = (risk, risk_lower, risk_upper)
 
-# Result output section
-if st.button(T['calculate'][lang]):
+# Initialize calculate_clicked state
+if 'calculate_clicked' not in st.session_state:
+    st.session_state['calculate_clicked'] = False
+
+if st.markdown(f"""
+    <div style='text-align: center; margin-top: 20px; margin-bottom: 20px;'>
+        <button style='background-color: #ff9933; color: white; padding: 10px 25px; font-size: 18px; border: none; border-radius: 8px; cursor: pointer;'>
+            {T['calculate'][lang]}
+        </button>
+    </div>
+""", unsafe_allow_html=True):
+    st.session_state['calculate_clicked'] = True
+
+if st.session_state.get('calculate_clicked'):
     for year, (r, lower, upper) in results.items():
         if lang == "日本語":
             year_label = year.replace("y", "年") if "y" in year else f"{year}年"
