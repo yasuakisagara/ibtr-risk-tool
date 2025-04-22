@@ -16,8 +16,8 @@ T = {
     },
     "version": {"English": "Version 1.5", "日本語": "バージョン1.5"},
     "description": {
-        "English": "Please enter the patient's clinical and pathological information below.",
-        "日本語": "以下に患者の臨床および病理情報を入力してください。"
+        "English": "This tool estimates the likelihood of Ipsilateral Breast Tumor Recurrence (IBTR) based on selected treatments.\nPlease select the clinical and pathological features below.",
+        "日本語": "このツールでは、同側乳房内再発（IBTR）の可能性を推定します。\n以下の臨床・病理情報を選択してください。"
     },
     "calculate": {"English": "Calculate IBTR Risk", "日本語": "乳戸内再発リスクを計算"},
     "estimated_risk": {"English": "Estimated IBTR risk at", "日本語": "推定された乳戸内再発リスク（"},
