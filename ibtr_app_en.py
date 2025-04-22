@@ -172,6 +172,22 @@ for year, S0 in baseline_survival.items():
 
 # Show a centered button using a styled div for layout, but use a true Streamlit button for action
 st.markdown(
+    f"""
+    <style>
+    div.stButton > button {{
+        border: 2px solid red;
+        padding: 10px 25px;
+        font-size: 18px;
+        color: black;
+        background-color: white;
+        border-radius: 8px;
+        cursor: pointer;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
     f"<div style='text-align: center; margin-top: 20px; margin-bottom: 20px;'>",
     unsafe_allow_html=True
 )
