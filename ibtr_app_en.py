@@ -35,7 +35,7 @@ st.markdown(T['description'][lang])
 # Patient Characteristics (multilingual)
 if lang == "日本語":
     st.markdown("### 患者背景")
-    age = st.radio("年齢カテゴリ", ["40歳未満", "40代", "50代", "60代", "70歳以上"])
+    age = st.radio("年齢カテゴリ", ["40歳未満", "40代", "50代", "60代", "70歳以上"], index=1)
     margin = st.radio("最終断端状況", ["陰性断端", "近接断端(<5mm)", "陽性断端"])
     t_stage = st.radio("病理T分類", ["pT1", "pT2", "pT3（極少数）"])
     grade = st.radio("結等学的グレード", ["Grade 1", "Grade 2", "Grade 3"])
@@ -44,7 +44,7 @@ if lang == "日本語":
     her2 = st.checkbox("HER2受容体陽性")
 else:
     st.markdown("### Patient Characteristics")
-    age = st.radio("Age category", ["Under 40", "40s", "50s", "60s", "70 or older"])
+    age = st.radio("Age category", ["Under 40", "40s", "50s", "60s", "70 or older"], index=1)
     margin = st.radio("Final surgical margin", ["Negative margin", "Close margin(<5mm)", "Positive margin"])
     t_stage = st.radio("Pathological T stage", ["pT1", "pT2", "pT3 (very few cases)"])
     grade = st.radio("Histologic grade", ["Grade 1", "Grade 2", "Grade 3"])
