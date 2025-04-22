@@ -170,7 +170,7 @@ for year, S0 in baseline_survival.items():
     risk_upper = 1 - S0 ** np.exp(xb + 1.96 * se_total)
     results[year] = (risk, risk_lower, risk_upper)
 
-# Initialize calculate_clicked state
+ # Initialize calculate_clicked state
 if 'calculate_clicked' not in st.session_state:
     st.session_state['calculate_clicked'] = False
 
