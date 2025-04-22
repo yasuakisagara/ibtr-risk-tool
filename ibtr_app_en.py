@@ -11,8 +11,8 @@ lang = st.selectbox("Language / 言語", ["English", "日本語"])
 # Translation dictionary (T) must come after lang is defined
 T = {
     "title": {
-        "English": "IBTR Risk Estimation Tool Integrating Real-World Data and Evidence from Meta-Analyses",
-        "日本語": "リアルワールドデータとメタ解析に基づくIBTR発症率推定ツール"
+        "English": "IBTR Risk Estimation\nIntegrating Real-World Data\nand Evidence from Meta-Analyses",
+        "日本語": "リアルワールドデータと\nメタ解析に基づく\nIBTR発症率推定ツール"
     },
     "version": {"English": "Version 1.5", "日本語": "バージョン1.5"},
     "description": {
