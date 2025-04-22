@@ -16,7 +16,7 @@ T = {
     },
     "version": {"English": "Version 1.5", "日本語": "バージョン1.5"},
     "description": {
-        "English": "This tool estimates the likelihood of Ipsilateral Breast Tumor Recurrence (IBTR) based on selected treatments.\nPlease select the clinical and pathological features below.",
+        "English": "This tool estimates the likelihood of Ipsilateral Breast Tumor Recurrence (IBTR) based on selected patient background and treatments.\nPlease select the clinical and pathological features below.",
         "日本語": "このツールでは、同側乳房内再発（IBTR）の可能性を推定します。\n以下の臨床・病理情報を選択してください。"
     },
     "calculate": {"English": "Calculate IBTR Risk", "日本語": "乳戸内再発リスクを計算"},
@@ -28,14 +28,16 @@ T = {
 st.markdown("""
 <div style='text-align: center;'>
     <img src="https://res.cloudinary.com/dqlawunmg/image/upload/v1745049473/logo_pjk79t.png" width="250"><br>
-    <h2 style="margin-bottom: 0;">{title}</h2>
-    <h4 style="margin-top: 0;">{version}</h4>
+    <h2 style="margin-bottom: 0;">IBTR Risk Estimation</h2>
+    <p style="font-size: 16px; color: gray; margin-top: 4px;">
+        Integrating Real-World Data and Evidence from Meta-Analyses
+    </p>
+    <h4 style="margin-top: 10px;">{version}</h4>
     <p>{description}</p>
 </div>
 """.format(
-    title=T['title'][lang],
     version=T['version'][lang],
-    description=T['description'][lang]
+    description=T['description'][lang].replace("\n", "<br>")
 ), unsafe_allow_html=True)
 
 # Patient Characteristics (multilingual)
