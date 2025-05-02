@@ -269,7 +269,7 @@ if lang == "日本語":
 
 ツールの識別能や予測能には限界があり、特に対象症例が少ないポピュレーション（例：40歳未満や病理学的T3）では95%信頼区間が広く解釈に注意が必要です。
 
-学会や論文にて本ツールの開発方法について近日報告予定です。報告後に参考文献を掲示いたします。
+本予測ツールの開発手法は、2025年ASCO年次総会（演題番号575、6月2日）で発表予定であり、学術誌にも掲載される予定です。出版後に参考文献を掲載いたします。
 
 
 ### 免責事項
@@ -294,7 +294,8 @@ In addition, we incorporated hazard ratios from the EBCTCG meta-analyses (Lancet
 
 The tool has limitations in its discrimination and predictive accuracy, particularly in subpopulations with small sample sizes (e.g., patients under 40 years or with pathological T3 tumors), where the 95% confidence intervals are wide and require cautious interpretation.
 
-The development methodology of this tool will be reported at academic conferences and in peer-reviewed publications in the near future. The references will be provided after the presentation and publication.
+The methodology of this prediction tool will be presented at the 2025 ASCO Annual Meeting (Abstract #575, June 2) and will be published in peer-reviewed journals. References will be provided following publication.
+
 
 ### Disclaimer
 This tool is intended for academic and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Please consult with a healthcare provider for medical guidance.
