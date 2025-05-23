@@ -40,7 +40,7 @@ st.markdown(T['description'][lang].replace("\\n", "<br>"), unsafe_allow_html=Tru
 if lang == "日本語":
     st.markdown("### 患者背景")
     age = st.radio("年齢カテゴリ", ["40歳未満", "40代", "50代", "60代", "70歳以上"], index=1)
-    margin = st.radio("最終断端状況", ["断端陰性(>=5mm)", "断端近接(<5mm)", "断端陽性"])
+    margin = st.radio("最終断端状況", ["明瞭断端(≥5mm)", "近接断端(<5mm)", "陽性断端（tumor on ink）"])
     t_stage = st.radio("病理T分類", ["pT1", "pT2", "pT3（極少数）"])
     grade = st.radio("組織学的/核 グレード", ["Grade 1", "Grade 2", "Grade 3"])
     lvi = st.checkbox("脈管侵撃あり")
@@ -49,7 +49,7 @@ if lang == "日本語":
 else:
     st.markdown("### Patient Characteristics")
     age = st.radio("Age category", ["Under 40", "40s", "50s", "60s", "70 or older"], index=1)
-    margin = st.radio("Final surgical margin", ["Clear margin(>=5mm)", "Close margin(<5mm)", "Involved margin"])
+    margin = st.radio("Final surgical margin", ["Clear (≥5mm)", "Close (<5mm)", "Involved (tumor on ink)"])
     t_stage = st.radio("Pathological T stage", ["pT1", "pT2", "pT3 (very few cases)"])
     grade = st.radio("Histologic/nuclear grade", ["Grade 1", "Grade 2", "Grade 3"])
     lvi = st.checkbox("Lymphovascular invasion: Present")
@@ -114,12 +114,12 @@ age_mapping = {
 }
 
 margin_mapping = {
-    "Negative margin": "finalmargin_negative",
-    "Close margin(<5mm)": "finalmargin_close(<5mm)",
-    "Positive margin": "finalmargin_positive",
-    "陰性断端": "finalmargin_negative",
+    "Clear (≥5mm)": "finalmargin_negative",
+    "Close (<5mm)": "finalmargin_close(<5mm)",
+    "Involved (tumor on ink)": "finalmargin_positive",
+    "明瞭断端(≥5mm)": "finalmargin_negative",
     "近接断端(<5mm)": "finalmargin_close(<5mm)",
-    "陽性断端": "finalmargin_positive"
+    "陽性断端（tumor on ink）": "finalmargin_positive"
 }
 
 t_stage_mapping = {
@@ -308,6 +308,7 @@ if lang == "日本語":
 ### バージョン履歴
 - ver1.0（2025年4月11日公表）：初期バージョン
 - ver1.5（2025年4月17日更新）：データ整合性の見直しを行い、一部症例のIBTRイベント情報および分類を修正。
+- ver1.6（2025年5月23日更新）：変数の名称を変更
 """)
 else:
     st.markdown("""
@@ -315,6 +316,7 @@ else:
 ### Version History
 - ver1.0 (Released on April 11, 2025): Initial version
 - ver1.5 (Updated on April 17, 2025): Minor revisions made to ensure data consistency, including adjustments to IBTR event classification.
+- ver1.6 (Updated on May 23, 2025): Variable names revised
 """)
 
 # --- Credit and Feedback section (multilingual) ---
