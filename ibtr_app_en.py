@@ -19,8 +19,8 @@ T = {
         "English": "This tool estimates the likelihood of Ipsilateral Breast Tumor Recurrence (IBTR) based on selected patient background and treatments.\nPlease select the clinical and pathological features below.",
         "日本語": "このツールでは、同側乳房内再発（IBTR）の可能性を推定します。\n以下の臨床・病理情報を選択してください。"
     },
-    "calculate": {"English": "Calculate IBTR Risk", "日本語": "乳戸内再発リスクを計算"},
-    "estimated_risk": {"English": "Estimated IBTR risk at", "日本語": "推定された乳戸内再発リスク（"},
+    "calculate": {"English": "Calculate IBTR Risk", "日本語": "乳房内再発リスクを計算"},
+    "estimated_risk": {"English": "Estimated IBTR risk at", "日本語": "推定された乳房内再発リスク（"},
     "ci": {"English": "95% Confidence Interval", "日本語": "95%信頼区間"}
 }
 
@@ -40,7 +40,7 @@ st.markdown(T['description'][lang].replace("\\n", "<br>"), unsafe_allow_html=Tru
 if lang == "日本語":
     st.markdown("### 患者背景")
     age = st.radio("年齢カテゴリ", ["40歳未満", "40代", "50代", "60代", "70歳以上"], index=1)
-    margin = st.radio("最終断端状況", ["明瞭断端(≥5mm)", "近接断端(<5mm)", "陽性断端（tumor on ink）"])
+    margin = st.radio("最終断端状況", ["陰性断端(≥5mm)", "近接断端(<5mm)", "陽性断端（tumor on ink）"])
     t_stage = st.radio("病理T分類", ["pT1", "pT2", "pT3（極少数）"])
     grade = st.radio("組織学的/核 グレード", ["Grade 1", "Grade 2", "Grade 3"])
     lvi = st.checkbox("脈管侵撃あり")
@@ -117,7 +117,7 @@ margin_mapping = {
     "Clear (≥5mm)": "finalmargin_negative",
     "Close (<5mm)": "finalmargin_close(<5mm)",
     "Involved (tumor on ink)": "finalmargin_positive",
-    "明瞭断端(≥5mm)": "finalmargin_negative",
+    "陰性断端(≥5mm)": "finalmargin_negative",
     "近接断端(<5mm)": "finalmargin_close(<5mm)",
     "陽性断端（tumor on ink）": "finalmargin_positive"
 }
