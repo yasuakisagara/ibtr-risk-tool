@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 
 # Language selector must come first
-lang = st.selectbox("Language / 言語", ["English", "日本語"])
+lang = st.selectbox("Language/言語", ["English", "日本語"])
 
 # Translation dictionary (T) must come after lang is defined
 T = {
@@ -267,9 +267,9 @@ if lang == "日本語":
 
 さらに、局所再発リスク低減効果を考慮するため、EBCTCG メタアナリシス（Lancet 2005, 2011）から得られた以下の補助療法のHRを統合しました：化学療法（HR 0.63, SE 0.08）、内分泌療法（HR 0.54, SE 0.07）、放射線治療（HR 0.31, SE 0.04）
 
-ツールの識別能や予測能には限界があり、特に対象症例が少ないポピュレーション（例：40歳未満や病理学的T3）では95%信頼区間が広く解釈に注意が必要です。
+ツールの識別能や予測能には限界があり、特に対象症例が少ないポピュレーション（例：40歳未満や病理学的T3）では95%信頼区間が広く解釈に注意が必要です。また、多くの患者は手術前に乳房の造影MRI検査を受けて、手術適応が判断されています。
 
-本予測ツールの開発手法は、2025年ASCO年次総会（演題番号575、6月2日）で発表予定であり、学術誌にも掲載される予定です。出版後に参考文献を掲載いたします。
+本予測ツールの開発手法は、2025年ASCO年次総会（演題番号575、6月2日）で発表され、近日中に学術誌にも掲載される予定です。出版後に参考文献を掲載いたします。
 
 
 ### 免責事項
@@ -292,9 +292,9 @@ We used hazard ratios from the multi-institutional cohort study comprising 8,938
 
 In addition, we incorporated hazard ratios from the EBCTCG meta-analyses (Lancet 2005, 2011) to account for the effects of adjuvant therapies on reducing the risk of isolated local recurrence: chemotherapy (HR 0.63, SE 0.08), endocrine therapy (HR 0.54, SE 0.07), and radiotherapy (HR 0.31, SE 0.04).
 
-The tool has limitations in its discrimination and predictive accuracy, particularly in subpopulations with small sample sizes (e.g., patients under 40 years or with pathological T3 tumors), where the 95% confidence intervals are wide and require cautious interpretation.
+There are inherent limitations in the discriminatory and predictive capabilities of the tool. In particular, for populations with a small number of cases (e.g., patients under 40 years of age or those with pathological T3 tumors), the 95% confidence intervals are wide, and caution is warranted when interpreting the results. Additionally, many patients undergo contrast-enhanced breast MRI prior to surgery, which plays a key role in determining surgical eligibility.
 
-The methodology of this prediction tool will be presented at the 2025 ASCO Annual Meeting (Abstract #575, June 2) and will be published in peer-reviewed journals. References will be provided following publication.
+The development methodology of this prediction tool was presented at the 2025 ASCO Annual Meeting (Abstract #575, June 2) and is scheduled to be published in a peer-reviewed journal in the near future. A reference will be added once the publication becomes available.
 
 
 ### Disclaimer
