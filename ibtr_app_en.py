@@ -269,7 +269,7 @@ if lang == "日本語":
 
 ツールの識別能や予測能には限界があり、特に対象症例が少ないポピュレーション（例：40歳未満や病理学的T3）では95%信頼区間が広く解釈に注意が必要です。また、多くの患者は手術前に乳房の造影MRI検査を受けて、手術適応が判断されています。
 
-本予測ツールの開発手法は、2025年ASCO年次総会（演題番号575、6月2日）で発表され、近日中に学術誌にも掲載される予定です。出版後に参考文献を掲載いたします。
+本予測ツールの開発手法は、2025年ASCO年次総会（演題番号575）にて発表され、現在は論文として掲載されています（Sagara et al., JCO Clinical Cancer Informatics, 2025）。詳細については、当該論文をご参照ください。
 
 
 ### 免責事項
@@ -292,9 +292,9 @@ We used hazard ratios from the multi-institutional cohort study comprising 8,938
 
 In addition, we incorporated hazard ratios from the EBCTCG meta-analyses (Lancet 2005, 2011) to account for the effects of adjuvant therapies on reducing the risk of isolated local recurrence: chemotherapy (HR 0.63, SE 0.08), endocrine therapy (HR 0.54, SE 0.07), and radiotherapy (HR 0.31, SE 0.04).
 
-There are inherent limitations in the discriminatory and predictive capabilities of the tool. In particular, for populations with a small number of cases (e.g., patients under 40 years of age or those with pathological T3 tumors), the 95% confidence intervals are wide, and caution is warranted when interpreting the results. Additionally, many patients undergo contrast-enhanced breast MRI prior to surgery, which plays a key role in determining surgical eligibility.
+There are inherent limitations in the discriminatory and predictive capabilities of the tool. In particular, for populations with a small number of cases (e.g., patients under 40 years of age or those with pathological T3 tumors), the 95% confidence intervals are wide, and caution is warranted when interpreting the results. Additionally, many patients underwent contrast-enhanced breast MRI prior to surgery, which plays a key role in determining surgical eligibility.
 
-The development methodology of this prediction tool was presented at the 2025 ASCO Annual Meeting (Abstract #575, June 2) and is scheduled to be published in a peer-reviewed journal in the near future. A reference will be added once the publication becomes available.
+The methodology used to develop this prediction tool was presented at the 2025 ASCO Annual Meeting (Abstract No. 575) and has been published in JCO Clinical Cancer Informatics (Sagara et al., 2025). For further details, please refer to the published article.
 
 
 ### Disclaimer
@@ -323,7 +323,8 @@ else:
 st.markdown("---")  # 区切り線
 
 if lang == "日本語":
-    st.markdown("""
+
+st.markdown("""
 ### クレジット
 日本乳癌学会第29回研究班（班長：坂井威彦）において多施設共同研究が行われました。モデルの開発と検証およびウェブアプリの実装は、相良安昭により主に行われました。
 
@@ -351,4 +352,36 @@ If you have any comments, suggestions, or would like to report a technical issue
 Your feedback will help us improve the tool in future updates and academic evaluations.
 
 [Click here to access the feedback form](https://docs.google.com/forms/d/e/1FAIpQLScZOEWa4osyS0K9Xg9Fq0p1EGeyyIOqXvfdkyxj07l9vyeGZw/viewform)
+""")
+
+# --- Privacy Policy Section (multilingual) ---
+st.markdown("---")
+
+if lang == "日本語":
+    st.markdown("""
+### プライバシーポリシー
+
+本アプリ（IBTR Risk Estimation）は、医療従事者による乳房内再発（IBTR）リスクの説明支援を目的として開発されたツールです。
+
+本アプリでは、以下のとおりユーザーのプライバシーを尊重し、個人情報の収集・保存・送信は一切行いません。
+
+- ユーザーの氏名、メールアドレス、位置情報、デバイス識別子等の個人情報は収集しません。
+- 入力された臨床情報や計算結果はすべて端末内で処理され、外部サーバーに送信されません。
+- いかなる情報も第三者へ提供されることはありません。
+- 本アプリは広告配信機能を使用していません。
+- 本プライバシーポリシーに関するご質問は、上記のフィードバックフォームにてご連絡ください。
+""")
+else:
+    st.markdown("""
+### Privacy Policy
+
+The IBTR Risk Estimation app is a non-commercial medical support tool designed to assist healthcare professionals in explaining the risk of ipsilateral breast tumor recurrence (IBTR).
+
+This app fully respects user privacy and does not collect, store, or transmit any personal information.
+
+- No personal data such as name, email address, location, or device identifiers is collected.
+- All entered clinical data and results are processed locally on your device and are not transmitted to external servers.
+- No information is shared with third parties.
+- This app does not use any advertising.
+- If you have any questions regarding this privacy policy, please contact us using the feedback form above.
 """)
