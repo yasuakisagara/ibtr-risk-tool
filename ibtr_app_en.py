@@ -374,7 +374,7 @@ else:
     st.markdown("""
 ### Privacy Policy
 
-The IBTR Risk Estimation app is a non-commercial medical support tool designed to assist healthcare professionals in explaining the risk of ipsilateral breast tumor recurrence (IBTR).
+The IBTR Risk Estimation web tool and iOS application are non-commercial medical support tools designed to assist healthcare professionals in explaining the risk of ipsilateral breast tumor recurrence (IBTR).
 
 This app fully respects user privacy and does not collect, store, or transmit any personal information.
 
