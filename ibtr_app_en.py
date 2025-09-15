@@ -267,7 +267,7 @@ if lang == "日本語":
     •    実際の診療では、主治医と相談のうえ治療方針を決定してください。
 
 発表について
-本研究成果は 2025年ASCO年次総会（演題番号575） にて発表され、JCO Clinical Cancer Informatics に論文掲載されています（Sagara et al., 2025）。詳細な解析や方法については論文をご参照ください。
+本研究成果は 2025年ASCO年次総会（演題番号575） にて発表され、JCO Clinical Cancer Informatics に論文掲載されています（https://ascopubs.org/doi/10.1200/CCI-25-00182）。詳細な解析や方法については論文をご参照ください。
 
 ### iPhoneおよびiPad版ツール
 インターネット環境がなくても利用できるiPhoneおよびiPad向けアプリを近日リリース予定です。10年間のIBTRリスクの推定に加え、選択した術後治療の効果を視覚的に分かりやすく提示することが可能です。
@@ -290,7 +290,7 @@ Key points
     •    This tool is designed to support discussion between patients and physicians, not to replace medical advice.
 
 Publication
-The methodology was presented at the 2025 ASCO Annual Meeting (Abstract No. 575) and published in JCO Clinical Cancer Informatics (Sagara et al., 2025). For detailed methods and results, please refer to the published article.
+The methodology was presented at the 2025 ASCO Annual Meeting (Abstract No. 575) and published in JCO Clinical Cancer Informatics (Sagara et al., 2025). For detailed methods and results, please refer to the published article(https://ascopubs.org/doi/10.1200/CCI-25-00182).
 
 ### iPhone and iPad version
 An iPhone and iPad version of the app will be available soon, designed to work offline without the need for an internet connection. This application provides not only a 10-year IBTR risk estimate but also a visual representation of the anticipated effects of selected treatment options.
