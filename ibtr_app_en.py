@@ -14,7 +14,7 @@ T = {
     "English": "IBTR Risk Estimation Tool<br>Integrating Real-World Data and Evidence from Meta-Analyses",
     "日本語": "リアルワールドデータと<br>メタ解析に基づくIBTR発症率推定ツール"
     },
-    "version": {"English": "Version 1.5", "日本語": "バージョン1.5"},
+    "version": {"English": "Version 1.61", "日本語": "バージョン1.61"},
     "description": {
         "English": "This tool estimates the likelihood of Ipsilateral Breast Tumor Recurrence (IBTR) based on selected patient background and treatments.\nPlease select the clinical and pathological features below.",
         "日本語": "このツールでは、同側乳房内再発（IBTR）の可能性を推定します。\n以下の臨床・病理情報を選択してください。"
