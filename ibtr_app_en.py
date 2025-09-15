@@ -254,23 +254,23 @@ if lang == "日本語":
     st.markdown("""
 ---
 ### 本ツールについて
-本リスク推定ツールは、2008年から2017年に部分切除術を受けた浸潤性乳がん女性を対象とした多施設後ろ向きコホート研究により開発・検証されました。全摘術への移行、術前化学療法の使用、両側・多発がん、主要データの欠落などの症例は除外されました。
+このツールは、2008〜2017年に乳房温存術（部分切除術）を受けた浸潤性乳がん患者 8,938人を対象とした日本の多施設共同研究の結果に基づいて開発・検証されました。
 
-本研究は日本乳癌学会共同研究グループによる共同研究として実施され、以下の日本国内の7つの施設が参加しました：がん研究会有明病院、聖路加国際病院、京都大学医学部附属病院、大阪公立大学医学部附属病院、三重大学医学部附属病院、岡山大学病院、博愛会相良病院
+研究のポイント
+    •    乳房温存術後の乳房内再発（IBTR）のリスクを5年・10年で推定
+    •    年齢、腫瘍の大きさ、断端状況、グレード、リンパ管侵襲、ホルモン受容体やHER2の状態、術後治療（放射線、内分泌療法、化学療法など）を考慮
+    •    大規模メタアナリシス（EBCTCG）のデータを組み込み、治療効果を反映
 
-モデルは Cox 比例ハザード回帰を用いて構築され、ブートストラップ再サンプリングにより検証されました。モデル性能は Harrell のC-index、Brierスコア、キャリブレーションプロット、および適合度検定で評価されました。再発予測のベースラインとして、Fine and Gray モデルにより死亡を競合リスクとした IBTR の累積発生率を使用しました。
+注意点
+    •    このツールはあくまで統計モデルに基づく推定であり、診断や治療を決定するものではありません。
+    •    特に40歳未満やまれな病理型など、対象患者が少ない条件では予測の幅が広くなるため、解釈には注意が必要です。
+    •    実際の診療では、主治医と相談のうえ治療方針を決定してください。
 
-8,938人の患者を対象とした多施設共同研究のハザード比を用いて検証され、以下を実施しました：
-- ブートストラップ検証（500回）
-- HarrellのC-indexとBrierスコアによる性能評価(Harrell's C: 0.65, Brier 0.036)
-- 推定リスクと実測リスクの一致度を評価するキャリブレーションプロット
+発表について
+本研究成果は 2025年ASCO年次総会（演題番号575） にて発表され、JCO Clinical Cancer Informatics に論文掲載されています（Sagara et al., 2025）。詳細な解析や方法については論文をご参照ください。
 
-さらに、局所再発リスク低減効果を考慮するため、EBCTCG メタアナリシス（Lancet 2005, 2011）から得られた以下の補助療法のHRを統合しました：化学療法（HR 0.63, SE 0.08）、内分泌療法（HR 0.54, SE 0.07）、放射線治療（HR 0.31, SE 0.04）
-
-ツールの識別能や予測能には限界があり、特に対象症例が少ないポピュレーション（例：40歳未満や病理学的T3）では95%信頼区間が広く解釈に注意が必要です。また、多くの患者は手術前に乳房の造影MRI検査を受けて、手術適応が判断されています。
-
-本予測ツールの開発手法は、2025年ASCO年次総会（演題番号575）にて発表され、現在は論文として掲載されています（Sagara et al., JCO Clinical Cancer Informatics, 2025）。詳細については、当該論文をご参照ください。
-
+### iPhoneおよびiPad版ツール
+インターネット環境がなくても利用できるiPhoneおよびiPad向けアプリを近日リリース予定です。10年間のIBTRリスクの推定に加え、選択した術後治療の効果を視覚的に分かりやすく提示することが可能です。
 
 ### 免責事項
 このツールは学術目的および教育目的のために提供されており、医学的助言、診断、治療の代替とはなりません。医療上の判断は必ず医療従事者にご相談ください。
@@ -279,23 +279,21 @@ else:
     st.markdown("""
 ---
 ### About this tool
-This risk estimation tool was developed and validated through a multi-center retrospective cohort study including women who underwent partial mastectomy for invasive breast cancer between 2008 and 2017. Cases involving conversion to mastectomy, use of neoadjuvant chemotherapy, bilateral/multiple cancers, or missing key data were excluded.
+This tool was developed based on a multi-center study of 8,938 women in Japan who underwent breast-conserving surgery (partial mastectomy) for invasive breast cancer between 2008 and 2017. Patients who had mastectomy conversion, received neoadjuvant chemotherapy, had bilateral/multiple cancers, or lacked essential data were excluded.
 
-The study was conducted as a collaborative project of the Japanese Breast Cancer Society Collaborative Research Group and involved seven institutions in Japan: Cancer Institute Hospital of JFCR, St. Luke's International Hospital, Kyoto University Hospital, Osaka Metropolitan University Hospital, Mie University Hospital, Okayama University Hospital, and Hakuaikai Sagara Hospital.
+The model estimates the risk of ipsilateral breast tumor recurrence (IBTR) at 5 and 10 years after surgery. It incorporates clinical and pathological factors (such as age, tumor size, margin status, grade, lymphovascular invasion, hormone receptor and HER2 status) as well as the effects of adjuvant therapies (chemotherapy, endocrine therapy, and radiotherapy). Treatment effects were informed by large-scale EBCTCG meta-analyses.
 
-Candidate models were developed using Cox proportional hazards regression and validated via bootstrap resampling. Model performance was assessed using Harrell’s C-index, Brier scores, calibration plots, and goodness-of-fit tests. The estimated cumulative incidence of ipsilateral breast tumor recurrence (IBTR), which served as the baseline for the prediction model, was calculated using the Fine and Gray model, treating death as a competing risk.
+Key points
+    •    Risk estimates are generated using robust statistical methods and internally validated.
+    •    Results are presented with 95% confidence intervals, showing the uncertainty range.
+    •    In smaller subgroups (e.g., patients under 40 years or with rare tumor types), the prediction intervals are wider, so results should be interpreted with caution.
+    •    This tool is designed to support discussion between patients and physicians, not to replace medical advice.
 
-We used hazard ratios from the multi-institutional cohort study comprising 8,938 patients. Internal validation was performed by assessing discrimination and calibration of Cox regression models:
-- Bootstrap validation (500 iterations)
-- Performance assessed using Harrell’s C-index and Brier score (Harrell’s C: 0.65, Brier score: 0.036)
-- Calibration plot was made to evaluate concordance between the estimated risk and observed risk
+Publication
+The methodology was presented at the 2025 ASCO Annual Meeting (Abstract No. 575) and published in JCO Clinical Cancer Informatics (Sagara et al., 2025). For detailed methods and results, please refer to the published article.
 
-In addition, we incorporated hazard ratios from the EBCTCG meta-analyses (Lancet 2005, 2011) to account for the effects of adjuvant therapies on reducing the risk of isolated local recurrence: chemotherapy (HR 0.63, SE 0.08), endocrine therapy (HR 0.54, SE 0.07), and radiotherapy (HR 0.31, SE 0.04).
-
-There are inherent limitations in the discriminatory and predictive capabilities of the tool. In particular, for populations with a small number of cases (e.g., patients under 40 years of age or those with pathological T3 tumors), the 95% confidence intervals are wide, and caution is warranted when interpreting the results. Additionally, many patients underwent contrast-enhanced breast MRI prior to surgery, which plays a key role in determining surgical eligibility.
-
-The methodology used to develop this prediction tool was presented at the 2025 ASCO Annual Meeting (Abstract No. 575) and has been published in JCO Clinical Cancer Informatics (Sagara et al., 2025). For further details, please refer to the published article.
-
+### iPhone and iPad version
+An iPhone and iPad version of the app will be available soon, designed to work offline without the need for an internet connection. This application provides not only a 10-year IBTR risk estimate but also a visual representation of the anticipated effects of selected treatment options.
 
 ### Disclaimer
 This tool is intended for academic and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Please consult with a healthcare provider for medical guidance.
@@ -309,6 +307,7 @@ if lang == "日本語":
 - ver1.0（2025年4月11日公表）：初期バージョン
 - ver1.5（2025年4月17日更新）：データ整合性の見直しを行い、一部症例のIBTRイベント情報および分類を修正。
 - ver1.6（2025年5月23日更新）：変数の名称を変更
+- ver1.61（2025年9月16日更新）：本ツール説明を変更
 """)
 else:
     st.markdown("""
@@ -317,6 +316,7 @@ else:
 - ver1.0 (Released on April 11, 2025): Initial version
 - ver1.5 (Updated on April 17, 2025): Minor revisions made to ensure data consistency, including adjustments to IBTR event classification.
 - ver1.6 (Updated on May 23, 2025): Variable names revised
+- ver1.61 (Updated on Sep 16, 2025): Explanation of this tool revised
 """)
 
 # --- Credit and Feedback section (multilingual) ---
@@ -374,7 +374,7 @@ else:
     st.markdown("""
 ### Privacy Policy
 
-The IBTR Risk Estimation web tool and iOS application are non-commercial medical support tools designed to assist healthcare professionals in explaining the risk of ipsilateral breast tumor recurrence (IBTR).
+The IBTR Risk Estimation web tool and iOS application is a non-commercial medical support tool designed to assist healthcare professionals in explaining the risk of ipsilateral breast tumor recurrence (IBTR).
 
 This app fully respects user privacy and does not collect, store, or transmit any personal information.
 
