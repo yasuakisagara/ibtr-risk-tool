@@ -2,6 +2,6 @@ pip>=24.0
 streamlit==1.33.0
 pandas==2.2.2
 numpy==1.26.4
-fpdf2==2.7.8
+fpdf2==2.7.9
 matplotlib==3.8.4
 plotly==5.20.0
