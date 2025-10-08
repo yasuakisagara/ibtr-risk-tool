@@ -1,5 +1,17 @@
 ## ibtr_app.py - Full Model with HR-based Calculation, ver1.5　logo cloudinary
 import streamlit as st
+
+# --- Safariフォント問題回避：システムネイティブフォント指定 ---
+st.markdown(
+    """
+    <style>
+    html, body, [class*="css"] {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
