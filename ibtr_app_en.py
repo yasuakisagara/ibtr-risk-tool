@@ -283,8 +283,8 @@ if lang == "日本語":
 https://ascopubs.org/doi/10.1200/CCI-25-00182
   
 
-### iPhoneおよびiPad版ツール
-インターネット環境がなくても利用できるiPhoneおよびiPad向けアプリを近日リリース予定です。10年間のIBTRリスクの推定に加え、選択した術後治療の効果を視覚的に分かりやすく提示することが可能です。
+### iPhoneおよびiPad版ツール (https://apps.apple.com/jp/app/ibtr-risk-estimation/id6744888499)
+インターネット環境がなくても利用できるiPhoneおよびiPad向けアプリとなります。10年間のIBTRリスクの推定に加え、選択した術後治療の効果を視覚的に分かりやすく提示することが可能です。
 
 ### 免責事項
 このツールは学術目的および教育目的のために提供されており、医学的助言、診断、治療の代替とはなりません。医療上の判断は必ず医療従事者にご相談ください。
@@ -306,8 +306,8 @@ Key points
 Publication
 The methodology was presented at the 2025 ASCO Annual Meeting (Abstract No. 575) and published in JCO Clinical Cancer Informatics (Sagara et al., 2025). For detailed methods and results, please refer to the published article(https://ascopubs.org/doi/10.1200/CCI-25-00182).
 
-### iPhone and iPad version
-An iPhone and iPad version of the app will be available soon, designed to work offline without the need for an internet connection. This application provides not only a 10-year IBTR risk estimate but also a visual representation of the anticipated effects of selected treatment options.
+### iPhone and iPad version　(https://apps.apple.com/jp/app/ibtr-risk-estimation/id6744888499)
+An iPhone and iPad version of the app is available now, designed to work offline without the need for an internet connection. This application provides not only a 10-year IBTR risk estimate but also a visual representation of the anticipated effects of selected treatment options. 
 
 ### Disclaimer
 This tool is intended for academic and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Please consult with a healthcare provider for medical guidance.
