@@ -1,0 +1,1298 @@
+[
+  {
+    "input": {
+      "age": "agecategory_<40",
+      "margin": "finalmargin_negative",
+      "stage": "pT_1",
+      "grade": "grade_1",
+      "lvi": "0",
+      "hormone_receptor": "0",
+      "her2": "0",
+      "radiation": "0",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.13228645211857104,
+        "lower": 0.060697281152984894,
+        "upper": 0.27496585383398664
+      },
+      "10y": {
+        "risk": 0.27466959923363443,
+        "lower": 0.1321300055482294,
+        "upper": 0.516975850044562
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_<40",
+      "margin": "finalmargin_negative",
+      "stage": "pT_1",
+      "grade": "grade_3",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "0",
+      "radiation": "1",
+      "chemotherapy": "1",
+      "endocrine": "1",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.030302434646078846,
+        "lower": 0.009423288709612843,
+        "upper": 0.09516834401361274
+      },
+      "10y": {
+        "risk": 0.06727027018412235,
+        "lower": 0.021199590330953977,
+        "upper": 0.20254543537099778
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_<40",
+      "margin": "finalmargin_negative",
+      "stage": "pT_2",
+      "grade": "grade_3",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.14082319387385844,
+        "lower": 0.03504825618523344,
+        "upper": 0.4757130710425468
+      },
+      "10y": {
+        "risk": 0.29071912882777273,
+        "lower": 0.0775694412011898,
+        "upper": 0.7680791311343977
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_<40",
+      "margin": "finalmargin_negative",
+      "stage": "pT_3",
+      "grade": "grade_3",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "0",
+      "chemotherapy": "1",
+      "endocrine": "0",
+      "targeted": "1"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.3551083727285891,
+        "lower": 0.01855406460659459,
+        "upper": 0.9999655158411611
+      },
+      "10y": {
+        "risk": 0.6294575274563999,
+        "lower": 0.04149955740921196,
+        "upper": 0.9999999999203989
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_<40",
+      "margin": "finalmargin_close(<5mm)",
+      "stage": "pT_1",
+      "grade": "grade_3",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "0",
+      "chemotherapy": "0",
+      "endocrine": "1",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.31980047084830365,
+        "lower": 0.0838143694504393,
+        "upper": 0.8166844256362243
+      },
+      "10y": {
+        "risk": 0.5819490455501883,
+        "lower": 0.17971924737669387,
+        "upper": 0.9784968429703613
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_<40",
+      "margin": "finalmargin_close(<5mm)",
+      "stage": "pT_2",
+      "grade": "grade_3",
+      "lvi": "1",
+      "hormone_receptor": "0",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "1",
+      "endocrine": "0",
+      "targeted": "1"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.13583796279707816,
+        "lower": 0.030416274949792266,
+        "upper": 0.4984483808227328
+      },
+      "10y": {
+        "risk": 0.2813709783098275,
+        "lower": 0.06751806865876564,
+        "upper": 0.7902189195363172
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_<40",
+      "margin": "finalmargin_close(<5mm)",
+      "stage": "pT_3",
+      "grade": "grade_3",
+      "lvi": "1",
+      "hormone_receptor": "0",
+      "her2": "0",
+      "radiation": "1",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.28264389570493376,
+        "lower": 0.016284407216516805,
+        "upper": 0.9987944505501211
+      },
+      "10y": {
+        "risk": 0.5284749638577584,
+        "lower": 0.036475720930750355,
+        "upper": 0.9999997521125564
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_<40",
+      "margin": "finalmargin_positive",
+      "stage": "pT_1",
+      "grade": "grade_3",
+      "lvi": "1",
+      "hormone_receptor": "0",
+      "her2": "1",
+      "radiation": "0",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.6760272986824825,
+        "lower": 0.20108792661821517,
+        "upper": 0.9965120593387166
+      },
+      "10y": {
+        "risk": 0.9219806731837961,
+        "lower": 0.398355992458182,
+        "upper": 0.9999972556436465
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_<40",
+      "margin": "finalmargin_positive",
+      "stage": "pT_2",
+      "grade": "grade_3",
+      "lvi": "0",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "1",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.13875074141693078,
+        "lower": 0.02792254858919918,
+        "upper": 0.5451790289952021
+      },
+      "10y": {
+        "risk": 0.28684122695506864,
+        "lower": 0.062081508131349605,
+        "upper": 0.831872698780279
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_<40",
+      "margin": "finalmargin_positive",
+      "stage": "pT_3",
+      "grade": "grade_3",
+      "lvi": "0",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "1"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.28622562503335947,
+        "lower": 0.012971138373868318,
+        "upper": 0.9998347967769622
+      },
+      "10y": {
+        "risk": 0.5337863381058086,
+        "lower": 0.029115545062746162,
+        "upper": 0.9999999972408803
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_40s",
+      "margin": "finalmargin_negative",
+      "stage": "pT_1",
+      "grade": "grade_3",
+      "lvi": "0",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "0",
+      "chemotherapy": "1",
+      "endocrine": "1",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.0392990379828988,
+        "lower": 0.013327678518949448,
+        "upper": 0.11290114461338374
+      },
+      "10y": {
+        "risk": 0.08674014467145619,
+        "lower": 0.029909073168674416,
+        "upper": 0.23747804792538074
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_40s",
+      "margin": "finalmargin_negative",
+      "stage": "pT_2",
+      "grade": "grade_3",
+      "lvi": "0",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "0",
+      "chemotherapy": "0",
+      "endocrine": "1",
+      "targeted": "1"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.058121771844542924,
+        "lower": 0.01707697914201356,
+        "upper": 0.18792678537349272
+      },
+      "10y": {
+        "risk": 0.12673515883656217,
+        "lower": 0.03823172705866962,
+        "upper": 0.37569123038682994
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_40s",
+      "margin": "finalmargin_negative",
+      "stage": "pT_3",
+      "grade": "grade_3",
+      "lvi": "0",
+      "hormone_receptor": "1",
+      "her2": "0",
+      "radiation": "0",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.1469616714110462,
+        "lower": 0.009045843462147762,
+        "upper": 0.937985253668093
+      },
+      "10y": {
+        "risk": 0.30213604308296826,
+        "lower": 0.020355323422943883,
+        "upper": 0.9981497822434215
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_40s",
+      "margin": "finalmargin_close(<5mm)",
+      "stage": "pT_1",
+      "grade": "grade_3",
+      "lvi": "0",
+      "hormone_receptor": "0",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.06557195234565061,
+        "lower": 0.02258103050759419,
+        "upper": 0.1824034838426556
+      },
+      "10y": {
+        "risk": 0.1422897906228311,
+        "lower": 0.05037709787141598,
+        "upper": 0.36604003795839146
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_40s",
+      "margin": "finalmargin_close(<5mm)",
+      "stage": "pT_2",
+      "grade": "grade_3",
+      "lvi": "0",
+      "hormone_receptor": "0",
+      "her2": "1",
+      "radiation": "0",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "1"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.18604784946247055,
+        "lower": 0.05738948377000164,
+        "upper": 0.5117814413195548
+      },
+      "10y": {
+        "risk": 0.37241732748175194,
+        "lower": 0.12519784807693646,
+        "upper": 0.802628571613888
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_40s",
+      "margin": "finalmargin_close(<5mm)",
+      "stage": "pT_3",
+      "grade": "grade_2",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "1",
+      "endocrine": "0",
+      "targeted": "1"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.07305323785413753,
+        "lower": 0.0036147070589532815,
+        "upper": 0.7958948410071744
+      },
+      "10y": {
+        "risk": 0.1577525194843662,
+        "lower": 0.008161990320380896,
+        "upper": 0.9725786333844206
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_40s",
+      "margin": "finalmargin_positive",
+      "stage": "pT_1",
+      "grade": "grade_2",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "0",
+      "endocrine": "1",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.0551179230355725,
+        "lower": 0.014149578696597831,
+        "upper": 0.20192889460664287
+      },
+      "10y": {
+        "risk": 0.12041949950486208,
+        "lower": 0.03173694320310905,
+        "upper": 0.3997883338622742
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_40s",
+      "margin": "finalmargin_positive",
+      "stage": "pT_2",
+      "grade": "grade_2",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "0",
+      "chemotherapy": "1",
+      "endocrine": "1",
+      "targeted": "1"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.1027434465117556,
+        "lower": 0.023479990342940238,
+        "upper": 0.39023039619140265
+      },
+      "10y": {
+        "risk": 0.21757482095220404,
+        "lower": 0.05235258247231889,
+        "upper": 0.6735657237971779
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_40s",
+      "margin": "finalmargin_positive",
+      "stage": "pT_3",
+      "grade": "grade_2",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "0",
+      "radiation": "0",
+      "chemotherapy": "1",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.25007774810775085,
+        "lower": 0.014365030096536335,
+        "upper": 0.9967331329621705
+      },
+      "10y": {
+        "risk": 0.4786351517386006,
+        "lower": 0.03221577940672915,
+        "upper": 0.9999976336357388
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_50s",
+      "margin": "finalmargin_negative",
+      "stage": "pT_1",
+      "grade": "grade_2",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "0",
+      "radiation": "0",
+      "chemotherapy": "0",
+      "endocrine": "1",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.04296976794493501,
+        "lower": 0.020938478614878075,
+        "upper": 0.08712724943369787
+      },
+      "10y": {
+        "risk": 0.09461830649506187,
+        "lower": 0.04676162125859773,
+        "upper": 0.18641666491639275
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_50s",
+      "margin": "finalmargin_negative",
+      "stage": "pT_2",
+      "grade": "grade_2",
+      "lvi": "1",
+      "hormone_receptor": "0",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "1"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.03799760334761082,
+        "lower": 0.011976912982472498,
+        "upper": 0.1171006921984632
+      },
+      "10y": {
+        "risk": 0.08393784075617283,
+        "lower": 0.026900849453662223,
+        "upper": 0.24562318133179983
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_50s",
+      "margin": "finalmargin_negative",
+      "stage": "pT_3",
+      "grade": "grade_2",
+      "lvi": "1",
+      "hormone_receptor": "0",
+      "her2": "0",
+      "radiation": "0",
+      "chemotherapy": "1",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.10671492865628662,
+        "lower": 0.006603336499351964,
+        "upper": 0.8537149433921676
+      },
+      "10y": {
+        "risk": 0.22539071660940946,
+        "lower": 0.01488211740848211,
+        "upper": 0.9870963106615891
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_50s",
+      "margin": "finalmargin_close(<5mm)",
+      "stage": "pT_1",
+      "grade": "grade_2",
+      "lvi": "0",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "1",
+      "endocrine": "1",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.01375767066088962,
+        "lower": 0.0045247555117092775,
+        "upper": 0.041434585877557106
+      },
+      "10y": {
+        "risk": 0.030865596876281876,
+        "lower": 0.0102109935769652,
+        "upper": 0.0913281159921927
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_50s",
+      "margin": "finalmargin_close(<5mm)",
+      "stage": "pT_2",
+      "grade": "grade_2",
+      "lvi": "0",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "0",
+      "endocrine": "1",
+      "targeted": "1"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.02047775676553376,
+        "lower": 0.005820201491854915,
+        "upper": 0.07071347360186009
+      },
+      "10y": {
+        "risk": 0.04574613353567081,
+        "lower": 0.013123652885158932,
+        "upper": 0.15293343811580506
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_50s",
+      "margin": "finalmargin_close(<5mm)",
+      "stage": "pT_3",
+      "grade": "grade_2",
+      "lvi": "0",
+      "hormone_receptor": "1",
+      "her2": "0",
+      "radiation": "1",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.0534418932257934,
+        "lower": 0.0031084328388333304,
+        "upper": 0.6205089814238975
+      },
+      "10y": {
+        "risk": 0.11688456531941294,
+        "lower": 0.007021073777341846,
+        "upper": 0.8883996273484341
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_50s",
+      "margin": "finalmargin_positive",
+      "stage": "pT_1",
+      "grade": "grade_2",
+      "lvi": "0",
+      "hormone_receptor": "1",
+      "her2": "0",
+      "radiation": "0",
+      "chemotherapy": "1",
+      "endocrine": "1",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.0423023391029157,
+        "lower": 0.014337149249225467,
+        "upper": 0.1213523223823667
+      },
+      "10y": {
+        "risk": 0.09318869657830198,
+        "lower": 0.03215382225695351,
+        "upper": 0.25381962761681
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_50s",
+      "margin": "finalmargin_positive",
+      "stage": "pT_2",
+      "grade": "grade_2",
+      "lvi": "0",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "0",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.19200668705869273,
+        "lower": 0.0521366177422129,
+        "upper": 0.5721195568200891
+      },
+      "10y": {
+        "risk": 0.3827672589885016,
+        "lower": 0.11412611117611171,
+        "upper": 0.8535721575019388
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_50s",
+      "margin": "finalmargin_positive",
+      "stage": "pT_3",
+      "grade": "grade_2",
+      "lvi": "0",
+      "hormone_receptor": "0",
+      "her2": "0",
+      "radiation": "1",
+      "chemotherapy": "1",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.05318135393444923,
+        "lower": 0.002862979496668805,
+        "upper": 0.6471123058747634
+      },
+      "10y": {
+        "risk": 0.1163343480872785,
+        "lower": 0.006467667779289754,
+        "upper": 0.9053263710014675
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_60s",
+      "margin": "finalmargin_negative",
+      "stage": "pT_1",
+      "grade": "grade_2",
+      "lvi": "0",
+      "hormone_receptor": "0",
+      "her2": "1",
+      "radiation": "0",
+      "chemotherapy": "1",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.049458393439027915,
+        "lower": 0.020030168287904493,
+        "upper": 0.11940579219262604
+      },
+      "10y": {
+        "risk": 0.10845114999661809,
+        "lower": 0.04475901543040628,
+        "upper": 0.2500732390361603
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_60s",
+      "margin": "finalmargin_negative",
+      "stage": "pT_2",
+      "grade": "grade_1",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "1",
+      "endocrine": "1",
+      "targeted": "1"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.008924188109586617,
+        "lower": 0.0026671842152573566,
+        "upper": 0.0296399625967807
+      },
+      "10y": {
+        "risk": 0.020083118995879,
+        "lower": 0.006026098843906924,
+        "upper": 0.06582752476432185
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_60s",
+      "margin": "finalmargin_negative",
+      "stage": "pT_3",
+      "grade": "grade_1",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "0",
+      "radiation": "1",
+      "chemotherapy": "1",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.023514893180366037,
+        "lower": 0.0013801351267961337,
+        "upper": 0.33634634942454256
+      },
+      "10y": {
+        "risk": 0.05242923594553739,
+        "lower": 0.0031207444102768767,
+        "upper": 0.6046105417294202
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_60s",
+      "margin": "finalmargin_close(<5mm)",
+      "stage": "pT_1",
+      "grade": "grade_1",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "0",
+      "radiation": "1",
+      "chemotherapy": "0",
+      "endocrine": "1",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.017045642697640417,
+        "lower": 0.0077829809855579635,
+        "upper": 0.03712379009008182
+      },
+      "10y": {
+        "risk": 0.0381623326192172,
+        "lower": 0.017527607338116424,
+        "upper": 0.08205361999423144
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_60s",
+      "margin": "finalmargin_close(<5mm)",
+      "stage": "pT_2",
+      "grade": "grade_1",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "0",
+      "chemotherapy": "1",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.10288946966952217,
+        "lower": 0.03309086752856161,
+        "upper": 0.2955427903727488
+      },
+      "10y": {
+        "risk": 0.2178629708993982,
+        "lower": 0.07332933666854957,
+        "upper": 0.5474457495429323
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_60s",
+      "margin": "finalmargin_close(<5mm)",
+      "stage": "pT_3",
+      "grade": "grade_1",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "0",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "1"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.21737227453132024,
+        "lower": 0.011776616912350324,
+        "upper": 0.9937235648065956
+      },
+      "10y": {
+        "risk": 0.42575338229077886,
+        "lower": 0.026454337281428097,
+        "upper": 0.9999896277702878
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_60s",
+      "margin": "finalmargin_positive",
+      "stage": "pT_1",
+      "grade": "grade_1",
+      "lvi": "1",
+      "hormone_receptor": "0",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "1",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.0454015380191346,
+        "lower": 0.012570178226154916,
+        "upper": 0.15690013622778576
+      },
+      "10y": {
+        "risk": 0.09981642845922356,
+        "lower": 0.028222721608671675,
+        "upper": 0.3204015865692865
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_60s",
+      "margin": "finalmargin_positive",
+      "stage": "pT_2",
+      "grade": "grade_1",
+      "lvi": "1",
+      "hormone_receptor": "0",
+      "her2": "1",
+      "radiation": "0",
+      "chemotherapy": "1",
+      "endocrine": "0",
+      "targeted": "1"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.13153853301364948,
+        "lower": 0.032954085591570426,
+        "upper": 0.4476469024959009
+      },
+      "10y": {
+        "risk": 0.27325391701589163,
+        "lower": 0.07303263323430809,
+        "upper": 0.7390271412229883
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_60s",
+      "margin": "finalmargin_positive",
+      "stage": "pT_3",
+      "grade": "grade_1",
+      "lvi": "1",
+      "hormone_receptor": "0",
+      "her2": "0",
+      "radiation": "0",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.2744974896874127,
+        "lower": 0.016671114181585733,
+        "upper": 0.9978124527652265
+      },
+      "10y": {
+        "risk": 0.5162693918606094,
+        "lower": 0.03733272431316137,
+        "upper": 0.9999990452318731
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_70+",
+      "margin": "finalmargin_negative",
+      "stage": "pT_1",
+      "grade": "grade_1",
+      "lvi": "0",
+      "hormone_receptor": "1",
+      "her2": "0",
+      "radiation": "1",
+      "chemotherapy": "1",
+      "endocrine": "1",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.003430535618952013,
+        "lower": 0.0020049491856162227,
+        "upper": 0.00586677832999849
+      },
+      "10y": {
+        "risk": 0.007747034661893637,
+        "lower": 0.004531776136245891,
+        "upper": 0.013228286259043709
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_70+",
+      "margin": "finalmargin_negative",
+      "stage": "pT_2",
+      "grade": "grade_1",
+      "lvi": "0",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.01680762184749296,
+        "lower": 0.006227229924980815,
+        "upper": 0.04495350161519873
+      },
+      "10y": {
+        "risk": 0.03763514510381771,
+        "lower": 0.014037819835112986,
+        "upper": 0.09885996661487806
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_70+",
+      "margin": "finalmargin_negative",
+      "stage": "pT_3",
+      "grade": "grade_1",
+      "lvi": "0",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "0",
+      "chemotherapy": "1",
+      "endocrine": "0",
+      "targeted": "1"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.04780925776488554,
+        "lower": 0.002499655418029989,
+        "upper": 0.6166995528790655
+      },
+      "10y": {
+        "risk": 0.10494668793948769,
+        "lower": 0.005648191191591434,
+        "upper": 0.885848181417485
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_70+",
+      "margin": "finalmargin_close(<5mm)",
+      "stage": "pT_1",
+      "grade": "grade_1",
+      "lvi": "0",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "0",
+      "chemotherapy": "0",
+      "endocrine": "1",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.04212410814384793,
+        "lower": 0.01498806387347662,
+        "upper": 0.11542602878493602
+      },
+      "10y": {
+        "risk": 0.09280671892398451,
+        "lower": 0.033599715025483534,
+        "upper": 0.24238097980138318
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_70+",
+      "margin": "finalmargin_close(<5mm)",
+      "stage": "pT_2",
+      "grade": "grade_1",
+      "lvi": "0",
+      "hormone_receptor": "0",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "1",
+      "endocrine": "0",
+      "targeted": "1"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.016172158755473842,
+        "lower": 0.0051718967621829925,
+        "upper": 0.04997434939257739
+      },
+      "10y": {
+        "risk": 0.03622688100054661,
+        "lower": 0.011666614122828434,
+        "upper": 0.10954599592338687
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_70+",
+      "margin": "finalmargin_close(<5mm)",
+      "stage": "pT_3",
+      "grade": "grade_1",
+      "lvi": "0",
+      "hormone_receptor": "0",
+      "her2": "0",
+      "radiation": "1",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.03641768079401386,
+        "lower": 0.002212173507062931,
+        "upper": 0.46281945236885136
+      },
+      "10y": {
+        "risk": 0.08052944381381022,
+        "lower": 0.0049995091816898984,
+        "upper": 0.7549701519721708
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_70+",
+      "margin": "finalmargin_positive",
+      "stage": "pT_1",
+      "grade": "grade_1",
+      "lvi": "0",
+      "hormone_receptor": "0",
+      "her2": "1",
+      "radiation": "0",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.11827165493773795,
+        "lower": 0.0362600869371662,
+        "upper": 0.3488218656778145
+      },
+      "10y": {
+        "risk": 0.2478855928833763,
+        "lower": 0.08018907605292003,
+        "upper": 0.6212323771142456
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_70+",
+      "margin": "finalmargin_positive",
+      "stage": "pT_1",
+      "grade": "grade_3",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "1",
+      "endocrine": "0",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.04929261420851205,
+        "lower": 0.011386406183671038,
+        "upper": 0.19998726223009178
+      },
+      "10y": {
+        "risk": 0.10809921112371157,
+        "lower": 0.025584127472524476,
+        "upper": 0.3964784551700854
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_70+",
+      "margin": "finalmargin_positive",
+      "stage": "pT_2",
+      "grade": "grade_3",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "0",
+      "endocrine": "0",
+      "targeted": "1"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.07271754428662947,
+        "lower": 0.015132059398938802,
+        "upper": 0.311894934680082
+      },
+      "10y": {
+        "risk": 0.1570620530910286,
+        "lower": 0.03391941288210398,
+        "upper": 0.5708721262661682
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_70+",
+      "margin": "finalmargin_positive",
+      "stage": "pT_3",
+      "grade": "grade_3",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "0",
+      "chemotherapy": "1",
+      "endocrine": "1",
+      "targeted": "0"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.15986763961650863,
+        "lower": 0.007473263363931282,
+        "upper": 0.9824933626616927
+      },
+      "10y": {
+        "risk": 0.32580307706733,
+        "lower": 0.016833413933794228,
+        "upper": 0.9998942971754559
+      }
+    }
+  },
+  {
+    "input": {
+      "age": "agecategory_70+",
+      "margin": "finalmargin_positive",
+      "stage": "pT_3",
+      "grade": "grade_3",
+      "lvi": "1",
+      "hormone_receptor": "1",
+      "her2": "1",
+      "radiation": "1",
+      "chemotherapy": "1",
+      "endocrine": "1",
+      "targeted": "1"
+    },
+    "results": {
+      "5y": {
+        "risk": 0.04344066934420343,
+        "lower": 0.0018298899402440227,
+        "upper": 0.6593599896183855
+      },
+      "10y": {
+        "risk": 0.09562620389420373,
+        "lower": 0.004136548369430115,
+        "upper": 0.9126002459142225
+      }
+    }
+  }
+]
