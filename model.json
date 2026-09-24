@@ -1,0 +1,324 @@
+{
+  "version": "1.61",
+  "source_commit": "7f820643ec7661d3a131d55cf80dc29593fbef78",
+  "baseline_survival": {
+    "5y": 0.9425415,
+    "10y": 0.8746572
+  },
+  "coefficients": {
+    "agecategory_<40": [
+      0.874573,
+      0.417364
+    ],
+    "agecategory_40s": [
+      0.0,
+      0.0
+    ],
+    "agecategory_50s": [
+      -0.182361,
+      0.136322
+    ],
+    "agecategory_60s": [
+      -0.267784,
+      0.132929
+    ],
+    "agecategory_70+": [
+      -0.489379,
+      0.129613
+    ],
+    "finalmargin_negative": [
+      0.0,
+      0.0
+    ],
+    "finalmargin_close(<5mm)": [
+      0.511362,
+      0.227433
+    ],
+    "finalmargin_positive": [
+      0.861087,
+      0.456145
+    ],
+    "pT_1": [
+      0.0,
+      0.0
+    ],
+    "pT_2": [
+      0.134593,
+      0.170066
+    ],
+    "pT_3": [
+      0.682241,
+      1.413398
+    ],
+    "grade_1": [
+      0.0,
+      0.0
+    ],
+    "grade_2": [
+      0.192654,
+      0.171228
+    ],
+    "grade_3": [
+      0.413136,
+      0.29755
+    ],
+    "lvi": [
+      0.415052,
+      0.20102
+    ],
+    "hormone_receptor": [
+      -0.107287,
+      0.213524
+    ],
+    "her2": [
+      0.383047,
+      0.408019
+    ],
+    "radiation": [
+      -1.171182982,
+      0.04
+    ],
+    "chemotherapy": [
+      -0.46203546,
+      0.08
+    ],
+    "endocrine": [
+      -0.616186139,
+      0.07
+    ],
+    "targeted": [
+      -0.195477,
+      0.264011
+    ]
+  },
+  "fields": [
+    {
+      "id": "age",
+      "ja": "年齢カテゴリ",
+      "en": "Age category",
+      "group": "patient",
+      "options": [
+        {
+          "value": "agecategory_<40",
+          "ja": "40歳未満",
+          "en": "Under 40"
+        },
+        {
+          "value": "agecategory_40s",
+          "ja": "40代",
+          "en": "40s"
+        },
+        {
+          "value": "agecategory_50s",
+          "ja": "50代",
+          "en": "50s"
+        },
+        {
+          "value": "agecategory_60s",
+          "ja": "60代",
+          "en": "60s"
+        },
+        {
+          "value": "agecategory_70+",
+          "ja": "70歳以上",
+          "en": "70 or older"
+        }
+      ]
+    },
+    {
+      "id": "margin",
+      "ja": "最終断端状況",
+      "en": "Final surgical margin",
+      "group": "pathology",
+      "options": [
+        {
+          "value": "finalmargin_negative",
+          "ja": "陰性 ≥5 mm",
+          "en": "Clear ≥5 mm"
+        },
+        {
+          "value": "finalmargin_close(<5mm)",
+          "ja": "近接 <5 mm",
+          "en": "Close <5 mm"
+        },
+        {
+          "value": "finalmargin_positive",
+          "ja": "陽性（tumor on ink）",
+          "en": "Involved (tumor on ink)"
+        }
+      ]
+    },
+    {
+      "id": "stage",
+      "ja": "病理T分類",
+      "en": "Pathological T stage",
+      "group": "pathology",
+      "options": [
+        {
+          "value": "pT_1",
+          "ja": "pT1",
+          "en": "pT1"
+        },
+        {
+          "value": "pT_2",
+          "ja": "pT2",
+          "en": "pT2"
+        },
+        {
+          "value": "pT_3",
+          "ja": "pT3（症例数が少ない）",
+          "en": "pT3 (limited cases)"
+        }
+      ]
+    },
+    {
+      "id": "grade",
+      "ja": "組織学的／核グレード",
+      "en": "Histologic / nuclear grade",
+      "group": "pathology",
+      "options": [
+        {
+          "value": "grade_1",
+          "ja": "Grade 1",
+          "en": "Grade 1"
+        },
+        {
+          "value": "grade_2",
+          "ja": "Grade 2",
+          "en": "Grade 2"
+        },
+        {
+          "value": "grade_3",
+          "ja": "Grade 3",
+          "en": "Grade 3"
+        }
+      ]
+    },
+    {
+      "id": "lvi",
+      "ja": "脈管侵襲",
+      "en": "Lymphovascular invasion",
+      "group": "pathology",
+      "options": [
+        {
+          "value": "0",
+          "ja": "なし",
+          "en": "Absent"
+        },
+        {
+          "value": "1",
+          "ja": "あり",
+          "en": "Present"
+        }
+      ]
+    },
+    {
+      "id": "hormone_receptor",
+      "ja": "ホルモン受容体",
+      "en": "Hormone receptor",
+      "group": "pathology",
+      "options": [
+        {
+          "value": "0",
+          "ja": "陰性",
+          "en": "Negative"
+        },
+        {
+          "value": "1",
+          "ja": "陽性",
+          "en": "Positive"
+        }
+      ]
+    },
+    {
+      "id": "her2",
+      "ja": "HER2",
+      "en": "HER2 status",
+      "group": "pathology",
+      "options": [
+        {
+          "value": "0",
+          "ja": "陰性",
+          "en": "Negative"
+        },
+        {
+          "value": "1",
+          "ja": "陽性",
+          "en": "Positive"
+        }
+      ]
+    },
+    {
+      "id": "radiation",
+      "ja": "放射線療法",
+      "en": "Radiotherapy",
+      "group": "treatment",
+      "options": [
+        {
+          "value": "0",
+          "ja": "なし",
+          "en": "Absent"
+        },
+        {
+          "value": "1",
+          "ja": "あり",
+          "en": "Present"
+        }
+      ]
+    },
+    {
+      "id": "chemotherapy",
+      "ja": "化学療法",
+      "en": "Chemotherapy",
+      "group": "treatment",
+      "options": [
+        {
+          "value": "0",
+          "ja": "なし",
+          "en": "Absent"
+        },
+        {
+          "value": "1",
+          "ja": "あり",
+          "en": "Present"
+        }
+      ]
+    },
+    {
+      "id": "endocrine",
+      "ja": "内分泌療法",
+      "en": "Endocrine therapy",
+      "group": "treatment",
+      "options": [
+        {
+          "value": "0",
+          "ja": "なし",
+          "en": "Absent"
+        },
+        {
+          "value": "1",
+          "ja": "あり",
+          "en": "Present"
+        }
+      ]
+    },
+    {
+      "id": "targeted",
+      "ja": "抗HER2療法",
+      "en": "Anti-HER2 therapy",
+      "group": "treatment",
+      "options": [
+        {
+          "value": "0",
+          "ja": "なし",
+          "en": "Absent"
+        },
+        {
+          "value": "1",
+          "ja": "あり",
+          "en": "Present"
+        }
+      ]
+    }
+  ]
+}
