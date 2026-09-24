@@ -36,6 +36,9 @@ baseline_survival = {"5y": 0.94, "10y": 0.86}
 
 st.title("乳房内再発（IBTR）予測ツール")
 
+st.info("新しいWeb版を公開しました。治療条件による推定リスクの比較や、説明用の印刷・PDF保存に対応しています。ログイン不要でご利用いただけます。")
+st.link_button("新しいWeb版を開く", "https://ibtr-risk-estimation.ysagara.chatgpt.site/")
+
 # ラジオボタン選択肢
 age = st.radio("年齢カテゴリ", ["40歳未満", "40代（参照）", "50代", "60代", "70歳以上"])
 margin = st.radio("最終切除断端", ["陰性断端（参照）", "近接断端", "陽性断端"])

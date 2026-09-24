@@ -48,6 +48,14 @@ st.markdown(f"**{subtitle}**")
 st.markdown(f"**{T['version'][lang]}**")
 st.markdown(T['description'][lang].replace("\\n", "<br>"), unsafe_allow_html=True)
 
+# New web edition (the existing calculator remains available below).
+if lang == "日本語":
+    st.info("新しいWeb版を公開しました。治療条件による推定リスクの比較や、説明用の印刷・PDF保存に対応しています。ログイン不要でご利用いただけます。")
+    st.link_button("新しいWeb版を開く", "https://ibtr-risk-estimation.ysagara.chatgpt.site/")
+else:
+    st.info("A new web edition is available with treatment-scenario comparisons and print-friendly reports that can be saved as PDFs. No login required.")
+    st.link_button("Open the new web edition", "https://ibtr-risk-estimation.ysagara.chatgpt.site/")
+
 # Patient Characteristics (multilingual)
 if lang == "日本語":
     st.markdown("### 患者背景")
